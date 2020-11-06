@@ -1,0 +1,54 @@
+<div class="header overflow-hidden px-4 pt-4">
+  <div class="wrapper p-0">
+    <div class="header-logo float-left w-50"><a href="/"></a></div>
+    <ul class="header-nav float-right w-50">
+      <li class="header-nav-item ml-3"><a href="" class="text-dark">首页</a></li>
+      <li class="header-nav-item"><a href="" class="text-dark">简历模板</a></li>
+      <li class="header-nav-item"><a href="" class="text-dark">简历优化</a></li>
+      <li class="header-nav-item"><a href="" class="text-dark">简历定制</a></li>
+      <li class="header-nav-item"><a href="" class="text-dark">求职攻略</a></li>
+      <li class="ml-4 float-left"><a href="javascript:void(0);" class="text-white bg-dark px-3 py-1 rounded-pill">VIP</a></li>
+      <li class="float-right"><a href="javascript:void(0);" class="text-dark" data-toggle="modal" data-target="#loginModal"><svg width="1.2em" height="1.2em" viewBox="0 2 15 15" class="bi bi-person mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+      </svg>登录</a></li>
+    </ul>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/header.js"></script>
+<!-- 登录&注册 -->
+<div class="modal fade login-modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog pt-5">
+    <div class="modal-content pt-2 px-4">
+      <ul class="nav" id="loginTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="active text-muted px-4 font-size-17" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">登录</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="text-muted px-4 font-size-17" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">注册</a>
+        </li>
+      </ul>
+      <a href="" class="close-login-modal" data-dismiss="modal" aria-label="Close"><svg width="1.6em" height="1.6em" viewBox="0 0 17 17" class="bi bi-x-circle-fill mb-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+      </svg></a>
+      <div class="tab-content" id="loginTabContent">
+        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+          <input type="text" id="username" class="form-control border-lead mt-4" placeholder="手机号/邮箱" autocomplete="off">
+          <input type="password" id="password" class="form-control border-lead mt-3" placeholder="密码" autocomplete="off">
+          <div class="form-check font-size-14 mt-3">
+            <input type="checkbox" class="form-check-input" id="rememberPassword" checked="checked" autocomplete="off">
+            <label class="form-check-label text-lead" for="rememberPassword">记住密码</label>
+          </div>
+          <button type="button" id="loginButton" class="btn btn-danger mt-3 w-100">登 录</button>
+          <p class="w-100 mt-2"><a href="" class="float-right font-size-13 text-lead">忘记密码</a></p>
+          <p class="mt-3 font-size-13 text-lead w-100">其他登录方式：</p>
+          <div class="mt-1 py-1 w-100 mb-5">
+            <a href="" class="btn btn-success btn-sm float-left"><svg t="1604396075594" class="icon mr-1" viewBox="0 80 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3066" width="16" height="16"><path d="M682.409135 315.751361c11.047614 0 21.978571 0.811482 32.821523 2.01796-29.490661-137.322575-176.304402-239.35132-343.883071-239.35132-187.352015 0-340.821339 127.703497-340.821339 289.864784 0 93.603865 51.058886 170.46951 136.381134 230.087329l-34.088376 102.528118 119.145587-59.747779c42.632983 8.438183 76.839039 17.114796 119.384018 17.114796 10.694573 0 21.300119-0.528026 31.816636-1.354857-6.658653-22.786982-10.516518-46.653553-10.516518-71.417563C392.646682 436.592566 520.513908 315.751361 682.409135 315.751361zM499.153414 223.342718c25.662473 0 42.662659 16.882506 42.662659 42.529629 0 25.544793-17.000186 42.662659-42.662659 42.662659-25.544793 0-51.176566-17.117866-51.176566-42.662659C447.977871 240.225223 473.609645 223.342718 499.153414 223.342718zM260.625856 308.535005c-25.541723 0-51.321876-17.117866-51.321876-42.662659 0-25.647123 25.780153-42.529629 51.321876-42.529629 25.543769 0 42.544979 16.882506 42.544979 42.529629C303.169811 291.417139 286.169625 308.535005 260.625856 308.535005z" p-id="3067" fill="#ffffff"></path><path d="M993.473753 581.399603c0-136.263453-136.353504-247.335155-289.497417-247.335155-162.160263 0-289.880133 111.071701-289.880133 247.335155 0 136.498814 127.718847 247.335155 289.880133 247.335155 33.94102 0 68.173682-8.558933 102.263082-17.10354l93.483114 51.191916-25.631774-85.173868C942.502871 726.32432 993.473753 658.265248 993.473753 581.399603zM609.989755 538.752294c-16.97051 0-34.088376-16.882506-34.088376-34.103726 0-16.98279 17.117866-34.085306 34.088376-34.085306 25.780153 0 42.662659 17.10354 42.662659 34.085306C652.652414 521.869788 635.769908 538.752294 609.989755 538.752294zM797.460474 538.752294c-16.85283 0-33.853016-16.882506-33.853016-34.103726 0-16.98279 17.000186-34.085306 33.853016-34.085306 25.543769 0 42.659589 17.10354 42.659589 34.085306C840.120063 521.869788 823.004243 538.752294 797.460474 538.752294z" p-id="3068" fill="#ffffff"></path></svg>微信</a>
+            <a href="" class="btn btn-primary btn-sm float-left ml-2"><svg t="1604396282086" class="icon mr-1" viewBox="-50 90 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4396" width="15" height="15"><path d="M162.797568 576.497664c-30.287872 75.442176-35.29728 147.37408-10.903552 160.73728 16.87552 9.275392 43.149312-11.943936 67.883008-50.542592 9.814016 42.274816 34.000896 80.203776 68.589568 110.866432-36.21888 14.116864-59.94496 37.175296-59.94496 63.24224 0 42.944512 64.079872 77.613056 143.112192 77.613056 71.305216 0 130.373632-28.153856 141.273088-65.247232 2.885632 0 14.209024 0 16.961536 0 11.114496 37.093376 70.053888 65.247232 141.441024 65.247232 79.120384 0 143.11424-34.670592 143.11424-77.613056 0-26.066944-23.683072-48.955392-59.98592-63.24224 34.463744-30.662656 58.81856-68.591616 68.548608-110.866432 24.727552 38.598656 50.880512 59.817984 67.84 50.542592 24.518656-13.3632 19.632128-85.295104-10.94656-160.73728-23.891968-59.068416-56.266752-102.67648-80.953344-112.449536 0.333824-3.592192 0.626688-7.563264 0.626688-11.364352 0-22.892544-6.098944-44.027904-16.498688-61.239296 0.210944-1.376256 0.210944-2.67264 0.210944-4.050944 0-10.569728-2.381824-20.385792-6.475776-28.86656-6.223872-153.76384-101.339136-276.02944-255.35488-276.02944-153.974784 0-249.217024 122.267648-255.440896 276.02944-4.009984 8.605696-6.473728 18.466816-6.473728 28.993536 0 1.378304 0 2.67264 0.167936 4.052992-10.190848 17.084416-16.29184 38.219776-16.29184 61.19424 0 3.844096 0.206848 7.686144 0.4608 11.446272C219.148288 473.905152 186.650624 517.431296 162.797568 576.497664L162.797568 576.497664z" p-id="4397" fill="#ffffff"></path></svg>QQ</a>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">注册</div>
+      </div>
+    </div>
+  </div>
+</div>
