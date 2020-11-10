@@ -1,21 +1,25 @@
-<div class="header overflow-hidden px-4 pt-4">
-  <div class="wrapper p-0">
-    <div class="header-logo float-left w-50"><a href="/"></a></div>
-    <ul class="header-nav float-right w-50">
-      <li class="header-nav-item ml-3"><a href="" class="text-dark">首页</a></li>
-      <li class="header-nav-item"><a href="" class="text-dark">简历模板</a></li>
-      <li class="header-nav-item"><a href="" class="text-dark">简历优化</a></li>
-      <li class="header-nav-item"><a href="" class="text-dark">简历定制</a></li>
-      <li class="header-nav-item"><a href="" class="text-dark">求职攻略</a></li>
-      <li class="ml-4 float-left"><a href="javascript:void(0);" class="text-white bg-dark px-3 py-1 rounded-pill">VIP</a></li>
-      <li class="float-right"><a href="javascript:void(0);" class="text-dark" data-toggle="modal" data-target="#loginModal"><svg width="1.2em" height="1.2em" viewBox="0 2 15 15" class="bi bi-person mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-      </svg>登录</a></li>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script src="/js/header.js"></script>
+<div class="default-header overflow-hidden px-4 pt-4 pb-3">
+  <div class="px-2">
+    <div class="default-header-logo float-left w-25"><a href="/"></a></div>
+    <ul class="default-header-nav">
+      <li class="default-header-nav-item ml-3"><a href="/" class="text-dark">首页</a></li>
+      <li class="default-header-nav-item"><a href="" class="text-dark">简历模板</a></li>
+      <li class="default-header-nav-item"><a href="" class="text-dark">简历优化</a></li>
+      <li class="default-header-nav-item"><a href="" class="text-dark">简历定制</a></li>
+      <li class="default-header-nav-item"><a href="" class="text-dark">求职攻略</a></li>
+      
     </ul>
+    <div class="default-header-user float-right">
+        <a href="javascript:void(0);" class="text-white bg-dark px-3 py-1 rounded-pill float-left font-size-14">VIP</a>
+        <a href="javascript:void(0);" class="text-dark login-modal-button pb-2 ml-3 float-right font-size-15" style="margin-top: 3px;" data-toggle="" data-target="#loginModal">
+          <svg width="1.2em" height="1.2em" viewBox="0 2 16 16" class="bi bi-person mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+          </svg>登录</a>
+    </div>
   </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
-<script src="/js/header.js"></script>
 <!-- 登录&注册 -->
 <div class="modal fade login-modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog pt-5">

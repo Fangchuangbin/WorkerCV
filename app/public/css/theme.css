@@ -19,7 +19,6 @@ a:hover{text-decoration: none;}
 a .text-lead:hover{color: #657ea4!important;}
 .bg-lead{background: #e5ecf5;}
 .bg-light{background: #f8fafe!important;}
-.border{border-color: #e5ecf5!important;}
 .border-lead{border-color: #e5ecf5;}
 .border-light{border-color: #eff6fd!important;}
 .btn-lead{background: #e5ecf5!important;border-color: #e5ecf5;color: #313539;}
@@ -27,9 +26,10 @@ a .text-lead:hover{color: #657ea4!important;}
 .btn-lead:focus{color: #1f252e;background-color: #c9d8ea!important;border-color: #c0d1e7;box-shadow: 0 0 0 .2rem rgba(199, 206, 215, 0.5);}
 .img-thumbnail{border-color: #e5ecf5!important;}
 
-.header-logo a{display: block;overflow: hidden;background: url('/images/logo.png') no-repeat;height: 28px;width: 135px;}
-.header-nav {font-size: 15px;line-height: 28px;}
-.header-nav-item {float: left;margin-left: 32px;}
+.default-header-logo a{display: block;overflow: hidden;background: url('/images/logo.png') no-repeat;height: 28px;width: 135px;}
+.default-header-nav {font-size: 15px;line-height: 28px;position: absolute;left: 50%;transform: translateX(-50%);}
+.default-header-nav .dropdown-menu{min-width: 40px;left: -10px!important;}
+.default-header-nav-item {float: left;margin: 0px 20px;}
 .login-modal .nav a{transition: 0s!important;display: block;line-height: 48px;height: 50px;border-bottom: 2px solid #e5ecf5;}
 .login-modal .nav .active{border-bottom: 2px solid #343a40;color: #1f252e!important;}
 .close-login-modal{position: absolute;z-index: 110;display: block;width: 24px;height: 24px;right: 25px;margin-top: 15px;}
@@ -63,3 +63,11 @@ a .text-lead:hover{color: #657ea4!important;}
 .index-8 .special-list li a .title{display: block;max-height: 42px;line-height: 21px;overflow: hidden;}
 .index-9 h1{font-size: 45px;}
 .index-9 .btn-box{width: 285px;margin: auto}
+
+.resume-header{box-shadow: 0px 1px 3px rgba(0,0,0,0.03);}
+.resume-header-logo{background: url('/images/logo.png') no-repeat 0 6px;background-size: 100%;width: 170px;height: 35px;}
+.resume-header-logo a{display: block;overflow: hidden;height: 35px;width: 125px;}
+.resume-nav{display: flex;position: absolute;left: 50%;transform: translateX(-50%);}
+.resume-nav a{color: #343a40;margin: 0px 18px;}
+
+.layout-left{width: 160px;}
