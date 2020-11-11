@@ -5,19 +5,23 @@ const Controller = require('egg').Controller;
 //我的简历
 class ResumeController extends Controller {
   //模板->我的简历
-  async default() {
+  async index() {
     const { ctx } = this;
-    if(ctx.cookies.get('loginToken') == undefined) { ctx.redirect('/'); return false; };//登录状态
-    var basicData = {
-      "realname":"方创斌",
-      "phone":13184845054,
-      "email":"fangchuangbin@qq.com",
-      "address":"广东省肇庆市"
-    }
-    console.log(JSON.stringify(basicData))
-    await ctx.render('resume', {
-      
+    var loginToken = ctx.cookies.get('loginToken');
+    var getResumeList = await ctx.service.resume.getResumeList(loginToken);//我的简历
+    await ctx.render('resume/index', {
+      getResumeList: getResumeList.getResumeList,//我的简历
     });
+  }
+
+  //模板->编辑简历
+  async edit() {
+    const { ctx } = this;
+    var resumeKey = ctx.params.resumeKey;
+    const getResumeContent = await ctx.service.resume.getResumeContent(resumeKey);//简历详情
+    await ctx.render('resume/edit', {
+      getResumeContent: JSON.stringify(getResumeContent.getResumeContent),//简历详情
+    })
   }
 
 }

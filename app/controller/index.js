@@ -5,7 +5,7 @@ const Controller = require('egg').Controller;
 //首页
 class IndexController extends Controller {
   //模板->首页
-  async default() {
+  async index() {
     const { ctx } = this;
     await ctx.render('index', {
     });

@@ -63,11 +63,6 @@ module.exports = appInfo => {
     '/favicon.ico': fs.readFileSync('favicon.ico')
   };
 
-  //鉴权配置
-  config.jwt = {
-    secret: '123456'
-  };
-
   //跨域配置
   config.cors = {
     origin: '*',

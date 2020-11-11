@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>编辑简历 - 极速简历 WorkerCV</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-gray">
+{% include "../common/edit_header.html" %}
+  <div class="edit overflow-hidden">
+    RESUME_EDIT
+    <h1>{{ resumeKey }}</h1>
+    <p id="data" data-resume="{{ getResumeContent }}"></p>
+    <script>
+      var data = $('#data').attr('data-resume')
+      console.log(JSON.parse(data))
+    </script>
+  </div>
+</body>
+</html>

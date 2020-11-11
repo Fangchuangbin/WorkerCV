@@ -65,7 +65,7 @@ a.text-lead:hover{color: #657ea4!important;}
 .index-9 h1{font-size: 45px;}
 .index-9 .btn-box{width: 285px;margin: auto}
 
-.user-header{box-shadow: 0px 1px 3px rgba(0,0,0,0.03);}
+.user-header{border-bottom: 1px solid #e5ecf5;}
 .user-header-logo{background: url('/images/logo.png') no-repeat 0 6px;background-size: 100%;width: 170px;height: 35px;}
 .user-header-logo a{display: block;overflow: hidden;height: 35px;width: 125px;}
 .user-nav{display: flex;position: absolute;left: 50%;transform: translateX(-50%);z-index: 13;}
@@ -77,3 +77,9 @@ a.text-lead:hover{color: #657ea4!important;}
 .resume-list .card{width: 100%;position: relative;z-index: 9;}
 .resume-list .card-title{height: 25px;line-height: 25px;display: block;overflow: hidden;margin-bottom: 3px;text-align: center;}
 .resume-list a:hover{padding-top: 10px!important;}
+
+.edit-header{height: 51px;border-bottom: 1px solid #e5ecf5;}
+.edit-header .back-button{line-height: 35px;}
+.edit-header .back-button:hover{background: #eee;}
+.edit-header .resume-name{height: 34px;line-height: 35px;border-bottom: 1px solid #fff;transition: 0.3s;min-width: 150px;}
+.edit-header .resume-name:focus{border-color: #e5ecf5;}

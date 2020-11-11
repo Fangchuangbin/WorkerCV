@@ -10,16 +10,13 @@ $(document).ready(() => {
       type: 'get',
       dataType: 'json',
       timeout: 5000,
-      headers: {
-        'x-csrf-token': $.cookie('csrfToken'),
-        'Authorization': 'Bearer ' + $.cookie('loginToken')
-      },
+      headers: { 'x-csrf-token': $.cookie('csrfToken') },
       success: (response) => {
-        if(response.code == 200) {
+        if(response.code == 20000) {
           $('.login-modal-button').find('svg').remove(); $('.login-modal-button').text('个人中心');
           $('.login-modal-button').attr('data-target', '');
           $('.login-modal-button').attr('href', '/resume');
-        }else{
+        } else {
           $('.login-modal-button').attr('data-toggle', 'modal');
         }
       },
@@ -44,11 +41,10 @@ $(document).ready(() => {
         headers: { 'x-csrf-token': $.cookie('csrfToken') },
         data: { username,password },
         success: function(response) {
-          window.location.href = "/resume";
+          console.log(response)
+          if(response.result.code !== 20000){ alert('账号或密码错误！') } else { window.location.href = "/resume"; }
         },
-        error: function(error) {
-          alert('账号或密码错误！')
-        }
+        error: function(error) { alert('账号或密码错误！') }
       })
     }
   })
