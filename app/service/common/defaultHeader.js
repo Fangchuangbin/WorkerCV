@@ -5,7 +5,7 @@ const crypto = require('crypto');
 var success = { code: 20000, message: '请求成功' };
 var fail = { code: 40000, message: '请求失败' }
 
-class HeaderService extends Service {
+class DefaultHeaderService extends Service {
 
   //用户登录
   async login(loginData) {
@@ -21,4 +21,4 @@ class HeaderService extends Service {
 
 }
 
-module.exports = HeaderService;
+module.exports = DefaultHeaderService;

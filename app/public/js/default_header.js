@@ -3,7 +3,6 @@ $(document).ready(() => {
   //公共变量
   const baseURL = 'http://192.168.0.5:7001'
 
-
   //登录状态
   if($.cookie('loginToken')) {
     $.ajax({
