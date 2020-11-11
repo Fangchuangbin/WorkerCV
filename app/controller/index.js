@@ -8,7 +8,7 @@ class IndexController extends Controller {
   async index() {
     const { ctx } = this;
     await ctx.render('index/index', {
-
+      hello: test
     });
   }
 
