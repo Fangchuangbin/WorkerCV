@@ -49,7 +49,8 @@ a.text-lead:hover{color: #657ea4!important;}
 .index-3 .template-list li a{display: block;overflow: hidden;margin: 23px 15px 0px 15px;height: 370px;padding-top: 7px;}
 .index-3 .template-list li a:hover img{margin-top: -7px;}
 .index-3 .template-list li a img{height: 360px;width: 100%;transition: 0.4s;}
-.index-3 .more-template{height: 360px;padding-top: 55%;font-size: 14px;}
+.index-3 .template-list li a:hover .more-template{margin-top: -7px;}
+.index-3 .more-template{height: 360px;padding-top: 55%;font-size: 14px;transition: 0.4s;}
 .index-8 .article-recommend a{display: block;overflow: hidden;height: 104px;}
 .index-8 .article-recommend a:hover{color: #007bff!important;background: #fff;}
 .index-8 .article-recommend a img{min-height: 104px;}
@@ -80,6 +81,11 @@ a.text-lead:hover{color: #657ea4!important;}
 
 .edit-header{height: 51px;border-bottom: 1px solid #e5ecf5;}
 .edit-header .back-button{line-height: 35px;}
-.edit-header .back-button:hover{background: #eee;}
-.edit-header .resume-name{height: 34px;line-height: 35px;border-bottom: 1px solid #fff;transition: 0.3s;min-width: 150px;}
+.edit-header .back-button:hover{background: #e5ecf5;}
+.edit-header .resume-name{height: 34px;line-height: 34px;border-bottom: 1px solid #fff;transition: 0.3s;min-width: 150px;max-width: 250px;overflow: hidden;}
+.edit-header .resume-name:hover{border-color: #e5ecf5;}
 .edit-header .resume-name:focus{border-color: #e5ecf5;}
+.edit-header .resume-more{line-height: 35px;float: left;}
+.edit-header .resume-more-button:hover{background-color: #e5ecf5;}
+.edit-header .resume-more .dropdown-menu{min-width: 60px;}
+.edit-header .resume-more .dropdown-item{line-height: 21px;}

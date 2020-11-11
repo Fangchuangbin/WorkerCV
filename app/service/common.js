@@ -29,7 +29,14 @@ class CommonService extends Service {
   //保存loginToken
   async loginToken(token, loginData) {
     const { ctx, app } = this;
-    await app.mysql.update('workercv_user', { login_token: token }, { where: { phone: loginData.username } })
+    const emailRule = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+    const username = loginData.username;
+    if(emailRule.test(username)) {//判断账号类型
+      await app.mysql.update('workercv_user', { login_token: token }, { where: { email: username } });
+    }else{
+      await app.mysql.update('workercv_user', { login_token: token }, { where: { phone: username } });
+    }
+    
   }
 
 }

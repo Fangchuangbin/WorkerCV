@@ -11,6 +11,7 @@ class ResumeService extends Service {
   async getResumeList(loginToken) {
     const { ctx, app } = this;
     const getUser = await app.mysql.get('workercv_user', { login_token: loginToken });//获取loginToken所属用户ID
+    console.log(getUser)
     const getResumeList = await app.mysql.select('workercv_resume', { where: { user_id: getUser.id }, orders: [['update_time', 'desc']] });//获取该用户ID的所有简历
     if(getResumeList) {
       return { result: success, getResumeList }
