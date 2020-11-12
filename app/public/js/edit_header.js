@@ -1,7 +1,13 @@
 $(document).ready(() => {
 
   //公共变量
-  const baseURL = 'http://192.168.0.5:7001';
+  const baseURL = 'http://127.0.0.1:7001';
+
+  //退出登录
+  $('#logOut').click(() => {
+    $.removeCookie('loginToken', { path: '/' });
+    window.location.href = "/";
+  });
 
   //下载简历
   $('.download-resume').click(() => {
@@ -83,7 +89,7 @@ $(document).ready(() => {
   //左
   $.each(resumeDataEducationExperience, function(i, n) {
     resumeDataEducationExperienceList += '<div class="resume-education-experience-list-box">';
-    resumeDataEducationExperienceList += '<p class="my-2 pt-2 font-size-14 font-weight-bold">#学校' + Number(i + 1) + '</p>';
+    resumeDataEducationExperienceList += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + Number(i + 1) + '</p>';
     resumeDataEducationExperienceList += '<p class="mb-1"><label for="school" class="font-size-14">学校</label><input type="text" class="form-control form-control-sm school" autocomplete="off" value="' + n.school + '"></p>';
     resumeDataEducationExperienceList += '<p class="mb-1"><label for="time" class="font-size-14">时间</label><input type="text" class="form-control form-control-sm time" autocomplete="off" value="' + n.time + '"></p>';
     resumeDataEducationExperienceList += '<p class="mb-1"><label for="city" class="font-size-14">城市</label><input type="text" class="form-control form-control-sm city" autocomplete="off" value="' + n.city + '"></p>';

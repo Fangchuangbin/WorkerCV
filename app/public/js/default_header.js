@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
   //公共变量
-  const baseURL = 'http://192.168.0.5:7001'
+  const baseURL = 'http://127.0.0.1:7001'
 
   //登录状态
   if($.cookie('loginToken')) {
@@ -12,7 +12,7 @@ $(document).ready(() => {
       timeout: 5000,
       headers: { 'x-csrf-token': $.cookie('csrfToken') },
       success: (response) => {
-        if(response.code == 20000) {
+        if(response.result.code == 20000) {
           $('.login-modal-button').find('svg').remove(); $('.login-modal-button').text('个人中心');
           $('.login-modal-button').attr('data-target', '');
           $('.login-modal-button').attr('href', '/resume');

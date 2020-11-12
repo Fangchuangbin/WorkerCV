@@ -36,7 +36,17 @@ class CommonService extends Service {
     }else{
       await app.mysql.update('workercv_user', { login_token: token }, { where: { phone: username } });
     }
-    
+  }
+
+  //验证loginToken
+  async verifyLoginToken(loginToken) {
+    const { ctx, app } = this;
+    var verifyLoginToken = await app.mysql.get('workercv_user', { login_token: loginToken });
+    if(verifyLoginToken) {
+      return { result: success, verifyLoginToken }
+    }else{
+      return { result: fail }
+    }
   }
 
 }

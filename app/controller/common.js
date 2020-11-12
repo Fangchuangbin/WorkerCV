@@ -22,12 +22,23 @@ class CommonController extends Controller {
 
   //接口->登录状态
   async loginStatus() {
+
+    //公共变量
+    var success = { code: 20000, message: '请求成功' };
+    var fail = { code: 40000, message: '请求失败' }
+
     const { ctx } = this;
     var loginToken = ctx.cookies.get('loginToken');
+    
     if(loginToken == undefined) {
-      ctx.body = { code: 40000 }
+      ctx.body = { result: fail }
     }else{
-      ctx.body = { code: 20000 }
+      const verifyLoginToken = await ctx.service.common.verifyLoginToken(loginToken);//验证loginToken
+        if(verifyLoginToken.result.code == 20000) {
+          ctx.body = { result: success }
+        }else{
+          ctx.body = { result: fail }
+      }
     }
     
   }
