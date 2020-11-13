@@ -1,8 +1,6 @@
+import { baseURL } from './common.js'
+
 $(document).ready(() => {
-
-  //公共变量
-  const baseURL = 'http://127.0.0.1:7001'
-
   //登录状态
   if($.cookie('loginToken')) {
     $.ajax({

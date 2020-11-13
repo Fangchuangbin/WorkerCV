@@ -15,8 +15,8 @@
   <div class="user overflow-hidden">
     {% include "../common/user_left.html" %}
     <div class="user-resume float-left pt-4 mt-1">
-      <p class="text-lead font-size-14">我的简历（共有3份简历）</p>
-      <div class="resume-list mt-2">
+      <p class="text-lead font-size-14">我的简历（共有<span class="resume-list-count"></span>份简历）</p>
+      <div class="resume-list mt-2 overflow-hidden">
         {% for item in getResumeList %}
         <a href="/resume/{{ item.resume_key }}" class="text-dark pt-3 pr-3">
           <div class="card bg-white border-0">
@@ -24,10 +24,6 @@
             <div class="card-body py-2 px-3 mt-3">
               <p class="card-title font-size-14">{{ item.resume_name }}</p>
               <p id="data" data-work="{{ item.work_experience }}"></p>
-              <script>
-                var data = $('#data').attr('data-work');
-                console.log(JSON.parse(data));
-              </script>
             </div>
           </div>
         </a>
