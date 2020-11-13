@@ -6,13 +6,14 @@ function logOut() {
   window.location.href = "/";
 }
 
+//提示框
 function message(content, type) {
-  $('.overflow-hidden').find('.message').remove();
-  $('.overflow-hidden').append('<div class="message alert font-size-14 py-2 px-4 alert-' + type + '" role="alert">' + content + '</div>');
-  setTimeout(() => { $('.overflow-hidden').find('.message').css('margin-top', '5px');}, 10)
+  $('.header').find('.message').remove();
+  $('.header').append('<div class="message alert font-size-14 py-2 px-4 alert-' + type + '" role="alert">' + content + '</div>');
+  setTimeout(() => { $('.header').find('.message').css('margin-top', '10px');}, 10)
   setTimeout(() => {
-    $('.overflow-hidden').find('.message').css('margin-top', '0px');
-    setTimeout(() => { $('.overflow-hidden').find('.message').remove();}, 400)
+    $('.header').find('.message').css('margin-top', '0px');
+    setTimeout(() => { $('.header').find('.message').remove();}, 500)
   }, 3000)
 }
 

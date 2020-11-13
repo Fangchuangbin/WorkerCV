@@ -1,4 +1,4 @@
-import { baseURL } from './common.js'
+import { baseURL, message } from './common.js'
 
 $(document).ready(() => {
   //登录状态
@@ -40,7 +40,7 @@ $(document).ready(() => {
         data: { username,password },
         success: function(response) {
           console.log(response)
-          if(response.result.code !== 20000){ alert('账号或密码错误！') } else { window.location.href = "/resume"; }
+          if(response.result.code !== 20000){ message('账号或密码错误！', 'danger') } else { window.location.href = "/resume"; }
         },
         error: function(error) { alert('账号或密码错误！') }
       })
