@@ -83,6 +83,17 @@ class ResumeService extends Service {
     }
   }
 
+  //更新内容->工作经历
+  async saveResumeWorkExperience(resumeWorkExperienceData) {
+    const { ctx, app } = this;
+    const saveResumeWorkExperience = await app.mysql.update('workercv_resume', { work_experience: JSON.stringify(resumeWorkExperienceData.workExperienceData) }, { where: { resume_key: resumeWorkExperienceData.resumeKey } })
+    if(saveResumeWorkExperience.affectedRows === 1) {
+      return { result: success }
+    }else{
+      return { result: fail }
+    }
+  }
+
 }
 
 module.exports = ResumeService;

@@ -1,0 +1,78 @@
+[
+  {
+      "id":1,
+      "name":"基本信息",
+      "status":1,
+      "module": "basic",
+      "data":{
+          "realname":"方创斌",
+          "phone":"13184845054",
+          "address":"广东省肇庆市",
+          "email":"fangchuangbin@qq.com",
+          "education":"2021届专科",
+          "work_time":"已工作6个月",
+          "introduction":"本人具备良好的代码编写习惯，注重代码质量，有良好的沟通能力，有较强的工作责任感。",
+          "avatar":"http://image-workercv.test.upcdn.net/009862297f62849aefef6a6687a71c7d.jpg"
+      }
+  },
+  {
+      "id":2,
+      "name":"求职意向",
+      "status":1,
+      "module": "intention",
+      "data":{
+          "position":"前端开发工程师",
+          "city":"广州、深圳",
+          "salary":"6000",
+          "arrive_time":"1周内"
+      }
+  },
+  {
+      "id":3,
+      "name":"教育经历",
+      "status":1,
+      "module": "education",
+      "data":[
+          {
+              "school":"广东理工系统",
+              "time":"2018年9月 - 至今",
+              "city":"广东省肇庆市",
+              "department":"信息技术学院",
+              "level":"专科",
+              "major":"软件技术",
+              "content":"1测试内容;2测试内容123"
+          },
+          {
+              "school":"华南师范大学",
+              "time":"2018年10月 - 至今",
+              "city":"广东省肇庆市",
+              "department":"艺术设计学院",
+              "level":"本科",
+              "major":"视觉传达设计",
+              "content":"1测试内容;2测试内容123"
+          }
+      ]
+  },
+  {
+      "id":4,
+      "name":"工作经历",
+      "status":1,
+      "module": "work",
+      "data":[
+          {
+              "company":"广东云智信息科技有限公司",
+              "time":"2019年5月 - 至今",
+              "city":"广东省肇庆市",
+              "position":"前端开发工程师",
+              "content":"1测试内容;2测试内容123"
+          }
+      ]
+  },
+  {
+      "id":5,
+      "name":"自我评价",
+      "module": "introduction",
+      "status":1,
+      "data": {}
+  }
+]

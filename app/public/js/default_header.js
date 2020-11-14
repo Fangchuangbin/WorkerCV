@@ -5,7 +5,7 @@ $(document).ready(() => {
   if($.cookie('loginToken')) {
     $.ajax({
       url: baseURL + '/loginStatus',
-      type: 'get',
+      type: 'post',
       dataType: 'json',
       timeout: 5000,
       headers: { 'x-csrf-token': $.cookie('csrfToken') },

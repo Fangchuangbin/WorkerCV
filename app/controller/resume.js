@@ -73,12 +73,20 @@ class ResumeController extends Controller {
     ctx.body = saveResumeIntention;
   }
 
-  //接口->更新内容->教育经历
+  //接口->保存更改->教育经历
   async saveResumeEducationExperience() {
     const { ctx } = this;
     var resumeEducationExperienceData = ctx.request.body;
     const saveResumeEducationExperience = await ctx.service.resume.saveResumeEducationExperience(resumeEducationExperienceData);
     ctx.body = saveResumeEducationExperience;
+  }
+
+  //接口->保存更改->工作经历
+  async saveResumeWorkExperience() {
+    const { ctx } = this;
+    var resumeWorkExperienceData = ctx.request.body;
+    const saveResumeWorkExperience = await ctx.service.resume.saveResumeWorkExperience(resumeWorkExperienceData);
+    ctx.body = saveResumeWorkExperience;
   }
 
 }

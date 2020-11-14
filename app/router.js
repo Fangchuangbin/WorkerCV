@@ -15,12 +15,12 @@ module.exports = app => {
 
   //接口
   router.post('/login', controller.common.login);//登录
-  router.get('/loginStatus', controller.common.loginStatus);//登录状态
+  router.post('/loginStatus', controller.common.loginStatus);//登录状态
   router.post('/downloadResume', token, controller.resume.downloadResume);//下载简历
   router.post('/getCurrentResume', token, controller.resume.getCurrentResume);//获取当前简历所属模板
   router.post('/getCurrentResumeTemplate', token, controller.resume.getCurrentResumeTemplate);//获取当前简历所属模板
   router.post('/saveResumeBasic', token, controller.resume.saveResumeBasic);//更新内容->基本信息
   router.post('/saveResumeIntention', token, controller.resume.saveResumeIntention);//更新内容->求职意向
   router.post('/saveResumeEducationExperience', token, controller.resume.saveResumeEducationExperience);//更新内容->教育经历
-  
+  router.post('/saveResumeWorkExperience', token, controller.resume.saveResumeWorkExperience);//更新内容->工作经历
 };

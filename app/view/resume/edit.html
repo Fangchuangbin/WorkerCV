@@ -29,7 +29,9 @@
         <div class="tab-pane fade show active" id="v-pills-edit" role="tabpanel" aria-labelledby="v-pills-edit-tab">
           <div class="accordion" id="accordionResumeContent">
             <div class="card border-lead">
-              <div class="card-header font-size-14 bg-lead border-lead" id="heading1" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">基本信息</div>
+              <div class="card-header font-size-14 bg-lead border-lead" id="heading1" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">基本信息<a href="javascript:void(0);" class="test-button text-dark rounded float-right" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="1.0em" height="1.0em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+              </svg></a></div>
               <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionResumeContent">
                 <div class="card-body resume-basic p-3">
                   <p class="mb-1"><label for="realname" class="font-size-14">姓名</label><input type="text" class="form-control form-control-sm realname" autocomplete="off"></p>
@@ -65,6 +67,43 @@
                 </div>
               </div>
             </div>
+            <div class="card border-lead">
+              <div class="card-header font-size-14 bg-lead border-lead" id="heading4" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">工作经历</div>
+              <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionResumeContent">
+                <div class="card-body resume-education-experience px-3 pb-3 pt-1">
+                  <div class="resume-work-experience-list">···</div>
+                  <button type="button" class="btn btn-dark btn-sm my-3 mr-1 float-left resume-work-experience-save">保存更改</button>
+                  <button type="button" class="btn btn-outline-dark btn-sm my-3 ml-2 float-left resume-work-experience-add">添加模块</button>
+                </div>
+              </div>
+            </div>
+            <div class="card border-lead">
+              <div class="card-header font-size-14 bg-lead border-lead" id="heading5" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">项目经历</div>
+              <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionResumeContent">
+                <div class="card-body resume-education-experience px-3 pb-3 pt-1">
+                  <div class="resume-project-experience-list">···</div>
+                  <button type="button" class="btn btn-dark btn-sm my-3 mr-1 float-left resume-education-experience-save">保存更改</button>
+                </div>
+              </div>
+            </div>
+            <div class="card border-lead">
+              <div class="card-header font-size-14 bg-lead border-lead" id="heading6" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">技能证书</div>
+              <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionResumeContent">
+                <div class="card-body resume-education-experience px-3 pb-3 pt-1">
+                  <div class="resume-project-experience-list">···</div>
+                  <button type="button" class="btn btn-dark btn-sm my-3 mr-1 float-left resume-education-experience-save">保存更改</button>
+                </div>
+              </div>
+            </div>
+            <div class="card border-lead">
+              <div class="card-header font-size-14 bg-lead border-lead" id="heading7" data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse7">自我评价</div>
+              <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordionResumeContent">
+                <div class="card-body resume-education-experience px-3 pb-3 pt-1">
+                  <div class="resume-project-experience-list">···</div>
+                  <button type="button" class="btn btn-dark btn-sm my-3 mr-1 float-left resume-education-experience-save">保存更改</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="tab-pane fade" id="v-pills-case" role="tabpanel" aria-labelledby="v-pills-case-tab">...</div>
@@ -75,31 +114,36 @@
     </div>
     <div class="w-75 float-right pl-3 resume-right">
       <div class="border border-lead bg-white rounded">
-        {{ getCurrentResumeTemplate }}
-        <!-- <div class="resume-code" style="padding: 40px;">
-          <div class="resume-basic" style="overflow: hidden;position: relative;">
-            <div style="margin: auto 100px;height: 98px;overflow: hidden;">
-              <h4 class="realname" style="text-align: center;font-weight: bold;margin-bottom: 10px;"></h4>
-              <p class="phone-email-address" style="text-align: center;font-size: 13px;line-height: 20px;"><span class="phone"></span><span> | </span><span class="email"></span><span> | </span><span class="address"></span></p>
-              <p class="education-work-time" style="text-align: center;font-size: 13px;line-height: 20px;"><span class="education"></span><span> | </span><span class="work-time"></span></p>
-              <p class="introduction" style="text-align: center;font-size: 13px;line-height: 20px;"></p>
-            </div>
-            <img class="avatar" src="" width="80px" style="position: absolute;right: 0;top: 0;">
-          </div>
-          <div class="resume-intention" style="overflow: hidden;margin-top: 20px;">
-            <h6 class="resume-intention-name" style="font-size: 14px;font-weight: bold;border-bottom: 1px solid #000;padding-bottom: 7px;">求职意向</h6>
-            <div class="position-city-salary-arrive-time" style="font-size: 13px;overflow: hidden;height: 35px;line-height: 35px;">
-              <p style="width: 25%;float: left;"><span>职位：</span><span class="position"></span></p>
-              <p style="width: 25%;float: left;"><span>城市：</span><span class="city"></span></p>
-              <p style="width: 25%;float: left;"><span>薪资：</span><span class="salary"></span></p>
-              <p style="width: 25%;float: left;"><span>到岗时间：</span><span class="arrive-time"></span></p>
-            </div>
-          </div>
-          <div class="resume-education-experience" style="overflow: hidden;margin-top: 10px;">
-            <h6 class="resume-education-experience-name" style="font-size: 14px;font-weight: bold;border-bottom: 1px solid #000;padding-bottom: 7px;">教育经历</h6>
-            <div class="resume-education-experience-list"></div>
-          </div>
-        </div> -->
+<!-- 
+<div class="resume-box" style="padding: 40px;">
+  <div class="resume-basic" style="overflow: hidden;position: relative;">
+    <div style="margin: auto 100px;height: 98px;overflow: hidden;">
+      <h4 class="realname" style="text-align: center;font-weight: bold;margin-bottom: 10px;"></h4>
+      <p class="phone-email-address" style="text-align: center;font-size: 13px;line-height: 20px;"><span class="phone"></span><span> | </span><span class="email"></span><span> | </span><span class="address"></span></p>
+      <p class="education-work-time" style="text-align: center;font-size: 13px;line-height: 20px;"><span class="education"></span><span> | </span><span class="work-time"></span></p>
+      <p class="introduction" style="text-align: center;font-size: 13px;line-height: 20px;"></p>
+    </div>
+    <img class="avatar" src="" width="80px" style="position: absolute;right: 0;top: 0;">
+  </div>
+  <div class="resume-intention" style="overflow: hidden;margin-top: 20px;">
+    <h6 class="resume-intention-name" style="font-size: 14px;font-weight: bold;border-bottom: 1px solid #000;padding-bottom: 7px;">求职意向</h6>
+    <div class="position-city-salary-arrive-time" style="font-size: 13px;overflow: hidden;height: 35px;line-height: 35px;">
+      <p style="width: 25%;float: left;"><span>职位：</span><span class="position"></span></p>
+      <p style="width: 25%;float: left;"><span>城市：</span><span class="city"></span></p>
+      <p style="width: 25%;float: left;"><span>薪资：</span><span class="salary"></span></p>
+      <p style="width: 25%;float: left;"><span>到岗时间：</span><span class="arrive-time"></span></p>
+    </div>
+  </div>
+  <div class="resume-education-experience" style="overflow: hidden;margin-top: 10px;">
+    <h6 class="resume-education-experience-name" style="font-size: 14px;font-weight: bold;border-bottom: 1px solid #000;padding-bottom: 7px;">教育经历</h6>
+    <div class="resume-education-experience-list"></div>
+  </div>
+  <div class="resume-work-experience" style="overflow: hidden;margin-top: 10px;">
+    <h6 class="resume-work-experience-name" style="font-size: 14px;font-weight: bold;border-bottom: 1px solid #000;padding-bottom: 7px;">工作经历</h6>
+    <div class="resume-work-experience-list"></div>
+  </div>
+</div>
+ -->
       </div>
     </div>
     <p class="resume-key" data-resume-key="{{ resumeKey }}"></p>
