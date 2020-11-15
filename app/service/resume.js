@@ -51,43 +51,10 @@ class ResumeService extends Service {
   }
   
   //更新内容->基本信息
-  async saveResumeBasic(resumeBasicData) {
+  async saveResume(resumeData) {
     const { ctx, app } = this;
-    const saveResumeBasic = await app.mysql.update('workercv_resume', { basic: JSON.stringify(resumeBasicData.basicData) }, { where: { resume_key: resumeBasicData.resumeKey } })
-    if(saveResumeBasic.affectedRows === 1) {
-      return { result: success }
-    }else{
-      return { result: fail }
-    }
-  }
-
-  //更新内容->求职意向
-  async saveResumeIntention(resumeIntentionData) {
-    const { ctx, app } = this;
-    const saveResumeIntention = await app.mysql.update('workercv_resume', { intention: JSON.stringify(resumeIntentionData.intentionData) }, { where: { resume_key: resumeIntentionData.resumeKey } })
-    if(saveResumeIntention.affectedRows === 1) {
-      return { result: success }
-    }else{
-      return { result: fail }
-    }
-  }
-
-  //更新内容->教育经历
-  async saveResumeEducationExperience(resumeEducationExperienceData) {
-    const { ctx, app } = this;
-    const saveResumeEducationExperience = await app.mysql.update('workercv_resume', { education_experience: JSON.stringify(resumeEducationExperienceData.educationExperienceData) }, { where: { resume_key: resumeEducationExperienceData.resumeKey } })
-    if(saveResumeEducationExperience.affectedRows === 1) {
-      return { result: success }
-    }else{
-      return { result: fail }
-    }
-  }
-
-  //更新内容->工作经历
-  async saveResumeWorkExperience(resumeWorkExperienceData) {
-    const { ctx, app } = this;
-    const saveResumeWorkExperience = await app.mysql.update('workercv_resume', { work_experience: JSON.stringify(resumeWorkExperienceData.workExperienceData) }, { where: { resume_key: resumeWorkExperienceData.resumeKey } })
-    if(saveResumeWorkExperience.affectedRows === 1) {
+    const saveResume = await app.mysql.update('workercv_resume', { resume_data: JSON.stringify(resumeData.saveResumeData) }, { where: { resume_key: resumeData.resumeKey } })
+    if(saveResume.affectedRows === 1) {
       return { result: success }
     }else{
       return { result: fail }

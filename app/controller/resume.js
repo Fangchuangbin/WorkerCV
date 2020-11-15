@@ -57,36 +57,12 @@ class ResumeController extends Controller {
     ctx.body = getCurrentResumeTemplate;
   }
 
-  //接口->更新内容->基本信息
-  async saveResumeBasic() {
+  //接口->保存内容
+  async saveResume() {
     const { ctx } = this;
-    const resumeBasicData = ctx.request.body;
-    const saveResumeBasic = await ctx.service.resume.saveResumeBasic(resumeBasicData);
-    ctx.body = saveResumeBasic;
-  }
-
-  //接口->更新内容->求职意向
-  async saveResumeIntention() {
-    const { ctx } = this;
-    const resumeIntentionData = ctx.request.body;
-    const saveResumeIntention = await ctx.service.resume.saveResumeIntention(resumeIntentionData);
-    ctx.body = saveResumeIntention;
-  }
-
-  //接口->保存更改->教育经历
-  async saveResumeEducationExperience() {
-    const { ctx } = this;
-    var resumeEducationExperienceData = ctx.request.body;
-    const saveResumeEducationExperience = await ctx.service.resume.saveResumeEducationExperience(resumeEducationExperienceData);
-    ctx.body = saveResumeEducationExperience;
-  }
-
-  //接口->保存更改->工作经历
-  async saveResumeWorkExperience() {
-    const { ctx } = this;
-    var resumeWorkExperienceData = ctx.request.body;
-    const saveResumeWorkExperience = await ctx.service.resume.saveResumeWorkExperience(resumeWorkExperienceData);
-    ctx.body = saveResumeWorkExperience;
+    const resumeData = ctx.request.body;
+    const saveResume = await ctx.service.resume.saveResume(resumeData);
+    ctx.body = saveResume;
   }
 
 }
