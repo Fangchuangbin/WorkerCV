@@ -93,6 +93,7 @@ a.text-lead:hover{color: #657ea4!important;}
 .edit-header .resume-more .dropdown-menu{min-width: 60px;}
 .edit-header .resume-more .dropdown-item{line-height: 21px;}
 .resume-left{border-radius: 0px 4px 4px 4px!important;position: absolute;height: 90%;overflow-y: scroll;width: 290px;}
+.resume-left .card{position: static;}
 .resume-left .card-header{cursor: pointer;}
 .resume-right p,h1,h2,h3,h4,h5,h6{margin: 0;padding: 0;}
 .resume-nav{position: absolute;margin-left: -64px;z-index: 100;}
@@ -100,7 +101,11 @@ a.text-lead:hover{color: #657ea4!important;}
 .resume-nav .active{background: #fff!important;color: #1f252e!important;}
 .resume-save-tip{transition: 0.3s;line-height: 34px;}
 .waiting{position: absolute;z-index: 111;width: 100%;padding-top: 20%;height: 100%;top: 0;left: 0;background: rgba(255, 255, 255, 0.9);text-align: center;}
-.message{position: absolute;top: 10px;z-index: 1111;left: 50%;transform: translateX(-50%);transition: 0.5s;}
+.message{position: fixed;top: 10px;z-index: 1111;left: 50%;transform: translateX(-50%);transition: 0.5s;}
+.more-button{background: #fff;padding: 0px 3px;}
+.more-button:hover{background: #8599b7;}
+.more-button:hover svg{color: #fff!important;}
+.accordion .dropdown-menu{min-width: auto!important;margin-right: 20px;}
 
 /* 我的收藏 */
 .user-collect{padding-left: 220px;position: relative;width: 100%;z-index: 11;}
