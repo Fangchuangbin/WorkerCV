@@ -18,13 +18,12 @@ $(document).ready(() => {
       <div class="card-header font-size-14 bg-lead border-lead" id="heading1" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">基本信息<a href="javascript:void(0);" class="more-button text-dark rounded float-right" id="dropdownMoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="0.9em" height="0.9em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
         <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>\
         </svg></a><div class="dropdown-menu font-size-13 mt-2" aria-labelledby="dropdownMoreButton">\
-        <a class="dropdown-item px-3" href="#">上移</a>\
-        <a class="dropdown-item px-3" href="#">下移</a>\
-        <a class="dropdown-item px-3" href="#">重命名</a>\
-        <a class="dropdown-item px-3" href="#">关闭</a>\
+        <a class="dropdown-item px-3 up-shift" href="javascript:void(0);">上移</a>\
+        <a class="dropdown-item px-3 down-shift" href="javascript:void(0);">下移</a>\
+        <a class="dropdown-item px-3 rename" data-toggle="modal" data-target="#renameModal" href="javascript:void(0);">重命名</a>\
         </div>\
       </div>\
-      <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionResumeContent">\
+      <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionResumeContent">\
         <div class="card-body p-3">\
           <p class="mb-1"><label for="realname" class="font-size-14">姓名</label><input type="text" class="form-control form-control-sm realname" autocomplete="off"></p>\
           <p class="mb-1"><label for="phone" class="font-size-14">手机号</label><input type="text" class="form-control form-control-sm phone" autocomplete="off"></p>\
@@ -43,10 +42,9 @@ $(document).ready(() => {
       <div class="card-header font-size-14 bg-lead border-lead" id="heading2" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">求职意向<a href="javascript:void(0);" class="more-button text-dark rounded float-right" id="dropdownMoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="0.9em" height="0.9em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
         <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>\
         </svg></a><div class="dropdown-menu font-size-13 mt-2" aria-labelledby="dropdownMoreButton">\
-        <a class="dropdown-item px-3" href="#">上移</a>\
-        <a class="dropdown-item px-3" href="#">下移</a>\
-        <a class="dropdown-item px-3" href="#">重命名</a>\
-        <a class="dropdown-item px-3" href="#">关闭</a>\
+        <a class="dropdown-item px-3 up-shift" href="javascript:void(0);">上移</a>\
+        <a class="dropdown-item px-3 down-shift" href="javascript:void(0);">下移</a>\
+        <a class="dropdown-item px-3 rename" data-toggle="modal" data-target="#renameModal" href="javascript:void(0);">重命名</a>\
         </div>\
       </div>\
       <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionResumeContent">\
@@ -62,7 +60,14 @@ $(document).ready(() => {
     ',
     education: '\
     <div class="card border-lead education">\
-      <div class="card-header font-size-14 bg-lead border-lead" id="heading3" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">教育经历</div>\
+      <div class="card-header font-size-14 bg-lead border-lead" id="heading3" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">教育经历<a href="javascript:void(0);" class="more-button text-dark rounded float-right" id="dropdownMoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="0.9em" height="0.9em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+        <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>\
+        </svg></a><div class="dropdown-menu font-size-13 mt-2" aria-labelledby="dropdownMoreButton">\
+        <a class="dropdown-item px-3 up-shift" href="javascript:void(0);">上移</a>\
+        <a class="dropdown-item px-3 down-shift" href="javascript:void(0);">下移</a>\
+        <a class="dropdown-item px-3 rename" data-toggle="modal" data-target="#renameModal" href="javascript:void(0);">重命名</a>\
+        </div>\
+      </div>\
       <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionResumeContent">\
         <div class="card-body px-3 pb-3 pt-1">\
           <div class="education-box"></div>\
@@ -74,7 +79,14 @@ $(document).ready(() => {
     ',
     work: '\
     <div class="card border-lead work">\
-      <div class="card-header font-size-14 bg-lead border-lead" id="heading4" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">工作经历</div>\
+      <div class="card-header font-size-14 bg-lead border-lead" id="heading4" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">工作经历<a href="javascript:void(0);" class="more-button text-dark rounded float-right" id="dropdownMoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="0.9em" height="0.9em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+        <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>\
+        </svg></a><div class="dropdown-menu font-size-13 mt-2" aria-labelledby="dropdownMoreButton">\
+        <a class="dropdown-item px-3 up-shift" href="javascript:void(0);">上移</a>\
+        <a class="dropdown-item px-3 down-shift" href="javascript:void(0);">下移</a>\
+        <a class="dropdown-item px-3 rename" href="javascript:void(0);">重命名</a>\
+        </div>\
+      </div>\
       <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionResumeContent">\
         <div class="card-body px-3 pb-3 pt-1">\
           <div class="work-box"></div>\
@@ -86,7 +98,14 @@ $(document).ready(() => {
     ',
     appraise: '\
     <div class="card border-lead appraise">\
-      <div class="card-header font-size-14 bg-lead border-lead" id="heading5" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">自我评价</div>\
+      <div class="card-header font-size-14 bg-lead border-lead" id="heading5" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">自我评价<a href="javascript:void(0);" class="more-button text-dark rounded float-right" id="dropdownMoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="0.9em" height="0.9em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+        <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>\
+        </svg></a><div class="dropdown-menu font-size-13 mt-2" aria-labelledby="dropdownMoreButton">\
+        <a class="dropdown-item px-3 up-shift" href="javascript:void(0);">上移</a>\
+        <a class="dropdown-item px-3 down-shift" href="javascript:void(0);">下移</a>\
+        <a class="dropdown-item px-3 rename" href="javascript:void(0);">重命名</a>\
+        </div>\
+      </div>\
       <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionResumeContent">\
         <div class="card-body px-3 pb-3 pt-1">\
           <div class="appraise-box">\
@@ -99,7 +118,14 @@ $(document).ready(() => {
     ',
     project: '\
     <div class="card border-lead project">\
-      <div class="card-header font-size-14 bg-lead border-lead" id="heading6" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">项目经历</div>\
+      <div class="card-header font-size-14 bg-lead border-lead" id="heading6" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">项目经历<a href="javascript:void(0);" class="more-button text-dark rounded float-right" id="dropdownMoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="0.9em" height="0.9em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+        <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>\
+        </svg></a><div class="dropdown-menu font-size-13 mt-2" aria-labelledby="dropdownMoreButton">\
+        <a class="dropdown-item px-3 up-shift" href="javascript:void(0);">上移</a>\
+        <a class="dropdown-item px-3 down-shift" href="javascript:void(0);">下移</a>\
+        <a class="dropdown-item px-3 rename" href="javascript:void(0);">重命名</a>\
+        </div>\
+      </div>\
       <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionResumeContent">\
         <div class="card-body px-3 pb-3 pt-1">\
           <div class="project-box"></div>\
@@ -111,7 +137,14 @@ $(document).ready(() => {
     ',
     certificate: '\
     <div class="card border-lead certificate">\
-      <div class="card-header font-size-14 bg-lead border-lead" id="heading7" data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse7">技能证书</div>\
+      <div class="card-header font-size-14 bg-lead border-lead" id="heading7" data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse7">技能证书<a href="javascript:void(0);" class="more-button text-dark rounded float-right" id="dropdownMoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="0.9em" height="0.9em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+        <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>\
+        </svg></a><div class="dropdown-menu font-size-13 mt-2" aria-labelledby="dropdownMoreButton">\
+        <a class="dropdown-item px-3 up-shift" href="javascript:void(0);">上移</a>\
+        <a class="dropdown-item px-3 down-shift" href="javascript:void(0);">下移</a>\
+        <a class="dropdown-item px-3 rename" href="javascript:void(0);">重命名</a>\
+        </div>\
+      </div>\
       <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordionResumeContent">\
         <div class="card-body px-3 pb-3 pt-1">\
           <div class="certificate-box">\
@@ -125,7 +158,14 @@ $(document).ready(() => {
     ',
     association: '\
     <div class="card border-lead association">\
-      <div class="card-header font-size-14 bg-lead border-lead" id="heading8" data-toggle="collapse" data-target="#collapse8" aria-expanded="true" aria-controls="collapse8">社团经历</div>\
+      <div class="card-header font-size-14 bg-lead border-lead" id="heading8" data-toggle="collapse" data-target="#collapse8" aria-expanded="true" aria-controls="collapse8">社团经历<a href="javascript:void(0);" class="more-button text-dark rounded float-right" id="dropdownMoreButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="0.9em" height="0.9em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+        <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>\
+        </svg></a><div class="dropdown-menu font-size-13 mt-2" aria-labelledby="dropdownMoreButton">\
+        <a class="dropdown-item px-3 up-shift" href="javascript:void(0);">上移</a>\
+        <a class="dropdown-item px-3 down-shift" href="javascript:void(0);">下移</a>\
+        <a class="dropdown-item px-3 rename" href="javascript:void(0);">重命名</a>\
+        </div>\
+      </div>\
       <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordionResumeContent">\
         <div class="card-body resume-education-experience px-3 pb-3 pt-1">\
           <div class="association-box">\
@@ -453,7 +493,7 @@ $(document).ready(() => {
     //教育经历->添加模块
     $('.education .add-button').click(() => {
       var educationOrder = 1;//教育经历->序号
-      $('.resume-left').find('.education-box-main').each(function() { educationOrder = Number($(this).children('div').length + 1) });
+      $('.resume-left').find('.education-box').each(function() { educationOrder = Number($(this).children('div').length + 1) });
       var newEducationBoxMain = '';
       newEducationBoxMain += '<div class="education-box-main">';
       newEducationBoxMain += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + educationOrder + '<a href="javascript:void(0);" class="remove-button float-right font-size-13 font-weight-normal text-danger">删除模块</a></p>';
@@ -486,7 +526,7 @@ $(document).ready(() => {
   
     //社团经历->添加模块
     $('.association .add-button').click(() => {
-      var associationOrder = Number(0);//工作经历->序号
+      var associationOrder = 1;//工作经历->序号
       $('.resume-left').find('.association-box').each(function() { associationOrder = Number($(this).children('div').length + 1); });
       var newAssociationBoxMain = '';
       newAssociationBoxMain += '<div class="association-box-main">';
@@ -501,8 +541,8 @@ $(document).ready(() => {
 
     //项目经历->添加模块
     $('.project .add-button').click(() => {
-      var projectOrder = 0;//工作经历->序号
-      $('.resume-left').find('.project-box-main').each(function() { projectOrder = Number($(this).children('div').length + 1) });
+      var projectOrder = 1;//工作经历->序号
+      $('.resume-left').find('.project-box').each(function() { projectOrder = Number($(this).children('div').length + 1) });
       projectOrder += 1;
       var newProjectBoxMain = '';
       newProjectBoxMain += '<div class="project-box-main">';
@@ -624,6 +664,49 @@ $(document).ready(() => {
         success: ((response) => { getResume(1); message('已保存', 'success'); }),
         error: ((error) => { message('保存失败', 'danger'); return false; })
       })
+    })
+
+    //简历模块->上移
+    $(document).on('click', '.up-shift', function() {
+      var saveResumeData = resumeData.resume_data;//老数据
+      if(typeof saveResumeData == 'string') { saveResumeData = JSON.parse(saveResumeData); }
+      var resumeOrder = Number($(this).parents('.card').attr('data-order'));
+      saveResumeData[resumeOrder] = saveResumeData.splice(resumeOrder - 1, 1, saveResumeData[resumeOrder])[0];
+      $.ajax({
+        url: baseURL + '/saveResume',
+        type: 'post',
+        dataType: 'json',
+        timeout: 5000,
+        headers: { 'x-csrf-token': $.cookie('csrfToken') },
+        data: { resumeKey, saveResumeData },
+        success: ((response) => { getResume(); message('移动模块成功', 'success'); }),
+        error: ((error) => { message('移动模块成功失败', 'danger'); return false; })
+      })
+      saveResumeData = '';
+    })
+
+    //简历模块->下移
+    $(document).on('click', '.down-shift', function() {
+      var saveResumeData = resumeData.resume_data;//老数据
+      if(typeof saveResumeData == 'string') { saveResumeData = JSON.parse(saveResumeData); }
+      var resumeOrder = Number($(this).parents('.card').attr('data-order'));
+      saveResumeData[resumeOrder] = saveResumeData.splice(resumeOrder + 1, 1, saveResumeData[resumeOrder])[0];
+      $.ajax({
+        url: baseURL + '/saveResume',
+        type: 'post',
+        dataType: 'json',
+        timeout: 5000,
+        headers: { 'x-csrf-token': $.cookie('csrfToken') },
+        data: { resumeKey, saveResumeData },
+        success: ((response) => { getResume(); message('移动模块成功', 'success'); }),
+        error: ((error) => { message('移动模块成功失败', 'danger'); return false; })
+      })
+      saveResumeData = '';
+    })
+
+    //简历模块->重命名
+    $(document).on('click', '.rename', function() {
+
     })
 
     //关闭效果

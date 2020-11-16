@@ -1,6 +1,12 @@
 ul,ol,li,p{margin: 0;padding: 0;list-style-type: none;}
 a{transition: 0.3s;}
 a:hover{text-decoration: none;}
+@media screen and (max-width: 768px) {
+  .wrapper{width: 100%!important;}
+  .wrapper-plus{width: 100%!important;}
+  .w-50{width: 100%!important;margin: 0!important;padding: 0px 5%!important;}
+
+}
 .wrapper{width: 1120px;margin: auto;}
 .wrapper-plus{width: 1150px;margin: auto;}
 .overflow-hidden{overflow: hidden!important;}
@@ -16,7 +22,7 @@ a:hover{text-decoration: none;}
 .font-size-20{font-size: 20px}
 
 .text-lead{color: #8599b7;}
-a.text-lead:hover{color: #657ea4!important;}
+a.text-lead:hover{color: #657ea4;}
 .bg-lead{background: #e5ecf5;}
 .bg-light{background: #f8fafe!important;}
 .bg-gray{background: #eff6fd!important;}

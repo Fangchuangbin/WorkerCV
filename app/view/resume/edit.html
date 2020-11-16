@@ -17,6 +17,25 @@
     <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
     <path fill-rule="evenodd" d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
   </svg><p class="text-dark mt-2 font-size-14">加载中</p></div>
+  <div class="modal fade" id="renameModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="renameModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title font-size-16" id="renameModalLabel">重命名</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control form-control-sm" placeholder="请输入的名字...">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-sm btn-primary">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="wrapper-plus edit overflow-hidden mt-3">
     <div class="resume-nav nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" id="v-pills-edit-tab" data-toggle="pill" href="#v-pills-edit" role="tab" aria-controls="v-pills-edit" aria-selected="true">编辑</a>
