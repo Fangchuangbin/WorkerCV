@@ -91,9 +91,11 @@ a.text-lead:hover{color: #657ea4;}
 .edit-header{height: 51px;border-bottom: 1px solid #e5ecf5;}
 .edit-header .back-button{line-height: 35px;}
 .edit-header .back-button:hover{background: #e5ecf5;}
-.edit-header .resume-name{height: 34px;line-height: 34px;border-bottom: 1px solid #fff;transition: 0.3s;min-width: 150px;max-width: 250px;overflow: hidden;}
+.edit-header .resume-name{height: 34px;line-height: 34px;border-bottom: 1px solid #fff;transition: 0.3s;min-width: 150px;max-width: 350px;overflow: hidden;}
 .edit-header .resume-name:hover{border-color: #e5ecf5;}
-.edit-header .resume-name:focus{border-color: #e5ecf5;}
+.edit-header .resume-name:focus{border-color: #e5ecf5;min-width: 220px;}
+.edit-header .resume-name:focus .resume-name-save{width: 46px;padding: 0px 10px;}
+.edit-header .resume-name-save{height: 24px;line-height: 24px;width: 0;margin: 5px 0;padding: 0;transition: 0.3s;overflow: hidden;background: #e5ecf5;margin-left: 10px;border-radius: 4px;cursor: pointer;}
 .edit-header .resume-more{line-height: 35px;float: left;}
 .edit-header .resume-more-button:hover{background-color: #e5ecf5;}
 .edit-header .resume-more .dropdown-menu{min-width: 60px;}
@@ -112,6 +114,10 @@ a.text-lead:hover{color: #657ea4;}
 .more-button:hover{background: #8599b7;}
 .more-button:hover svg{color: #fff!important;}
 .accordion .dropdown-menu{min-width: auto!important;margin-right: 20px;}
+.sort .float-right a{display: none;cursor: pointer;}
+.sort li:hover a{display: inline-block;}
+.module .module-status{background: #e5ecf5;line-height: 16px;height: 21px;width: 21px;text-align: center;}
+.module .module-status:hover{background: #c9d8ea;}
 
 /* 我的收藏 */
 .user-collect{padding-left: 220px;position: relative;width: 100%;z-index: 11;}

@@ -41,6 +41,7 @@ class ResumeController extends Controller {
     const { ctx } = this;
     const currentResumeData = ctx.request.body;
     const getCurrentResume = await ctx.service.resume.getCurrentResume(currentResumeData);
+    console.log(getCurrentResume);
     ctx.body = getCurrentResume;
   }
 

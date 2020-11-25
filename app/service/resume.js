@@ -50,7 +50,7 @@ class ResumeService extends Service {
     }else{ return { result: fail } }
   }
   
-  //更新内容->基本信息
+  //保存更改
   async saveCurrentResume(resumeData) {
     const { ctx, app } = this;
     const saveCurrentResume = await app.mysql.update('workercv_resume', { resume_data: JSON.stringify(resumeData.saveResumeData) }, { where: { resume_key: resumeData.resumeKey } })

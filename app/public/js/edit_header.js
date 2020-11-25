@@ -1,9 +1,9 @@
 import { baseURL, logOut, message } from './common.js'
 
 $(document).ready(() => {
-  var resumeKey = document.location.pathname.replace(/\/resume\//g, '');//简历秘钥
-  //简历模块
-  var box = document.createElement('p');//简历外盒
+  //简历秘钥
+  var resumeKey = document.location.pathname.replace(/\/resume\//g, '');
+  //创建空的简历模板模块
   var basic = document.createElement('p');//基本信息
   var intention = document.createElement('p');//求职意向
   var education = document.createElement('p');//教育经历
@@ -12,13 +12,14 @@ $(document).ready(() => {
   var project = document.createElement('p');//项目经历
   var certificate = document.createElement('p');//技能证书
   var association = document.createElement('p');//社团经历
+  //左边->简历表单
   var accordion = {
     basic: '\
     <div class="card border-lead basic">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading1" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">\
       <span class="resume-name"></span>\
       </div>\
-      <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionResumeContent">\
+      <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionResumeContent">\
         <div class="card-body p-3">\
           <p class="mb-1"><label for="realname" class="font-size-14">姓名</label><input type="text" class="form-control form-control-sm realname" autocomplete="off"></p>\
           <p class="mb-1"><label for="phone" class="font-size-14">手机号</label><input type="text" class="form-control form-control-sm phone" autocomplete="off"></p>\
@@ -137,11 +138,13 @@ $(document).ready(() => {
       </div>\
     </div>\
     '
-  }//简历表单
-  var resumeData = Object();//简历数据
+  }
+  //创建一个空的简历数据变量
+  var resumeData;
+  //执行初始化
   getCurrentResume();
 
-  //获取简历数据
+  //编辑->初始化简历数据
   function getCurrentResume(status) {
     $.ajax({
       url: baseURL + '/getCurrentResume',
@@ -153,15 +156,17 @@ $(document).ready(() => {
       success: ((response) => {
         if(response.result.code == 20000) {
           resumeData = response.getCurrentResume;
-          getResumeTemplate(status);//渲染数据模板
+          $('.edit-header').find('.resume-name').html('<span class="resume-name-save float-right font-size-13" contenteditable="false">保存</span>');
+          $('.edit-header').find('.resume-name').append('<span class="resume-name-main">' + resumeData.resume_name + '</span>');//渲染简历名称
+          getCurrentResumeTemplate(status);//渲染数据模板
         }else{ message('未知错误，请刷新网页！', 'danger'); }
       }),
       error: ((error) => { message('未知错误，请刷新网页！', 'danger'); })
     })
   }
   
-  //获取简历模板
-  function getResumeTemplate(status) {
+  //编辑->初始化简历模板
+  function getCurrentResumeTemplate(status) {
     $.ajax({
       url: baseURL + '/getCurrentResumeTemplate',
       type: 'post',
@@ -171,7 +176,6 @@ $(document).ready(() => {
       data: { resumeKey },
       success: ((response) => {
         if(response.result.code == 20000) {
-          box.innerHTML = response.getCurrentResumeTemplate.template_box;//简历外盒
           basic.innerHTML = response.getCurrentResumeTemplate.template_basic;//基本信息
           intention.innerHTML = response.getCurrentResumeTemplate.template_intention;//基本信息
           education.innerHTML = response.getCurrentResumeTemplate.template_education;//基本信息
@@ -180,8 +184,7 @@ $(document).ready(() => {
           project.innerHTML = response.getCurrentResumeTemplate.template_project;//基本信息
           certificate.innerHTML = response.getCurrentResumeTemplate.template_certificate;//基本信息
           association.innerHTML = response.getCurrentResumeTemplate.template_association;//基本信息
-          $('.resume-right').find('.rounded').html(box.firstChild.data);//渲染->简历外盒
-          renderResumeTemplateModule(status);//方法->渲染->简历模块
+          renderCurrentResumeTemplateModule(status);//方法->渲染->简历模块
         }else{ message('未知错误，请刷新网页！', 'danger'); }
       }),
       error: ((error) => { message('未知错误，请刷新网页！', 'danger'); })
@@ -189,277 +192,307 @@ $(document).ready(() => {
     
   }
 
-  //渲染简历模块
-  function renderResumeTemplateModule(status) {
-    //渲染简历名称
-    $('.resume-name').text(resumeData.resume_name);
+  //编辑->渲染简历模板模块
+  function renderCurrentResumeTemplateModule(status) {
+    
     const loadResumeModuleData = JSON.parse(resumeData.resume_data);
-    if(status == 1){//1->保存内容，刷新简历右模块
-      resumeRight();
-      renderResume();
+    if(status == 1){//1->刷新简历右模块
+      renderCurrentResumeRight();
+      renderCurrentResume();
     }else{
-      resumeLeft(status);
-      resumeRight();
-      renderResume();
+      renderCurrentResumeLeft();
+      renderCurrentResumeRight();
+      renderCurrentResume();
     }
-    function resumeRight() {
+    function renderCurrentResumeRight() {
+      $('.resume-right').find('.resume-box').html('');
       $.each(loadResumeModuleData, function(i, n) {
         switch(n.module) {
           case 'basic':
-            $('.resume-right').find('.resume-box').append(basic.firstChild.data);//基本信息
+            if(n.status == 1) {
+              $('.resume-right').find('.resume-box').append(basic.firstChild.data);//基本信息
+            }
             break;
           case 'intention':
-            $('.resume-right').find('.resume-box').append(intention.firstChild.data);//求职意向
+              if(n.status == 1) {
+                $('.resume-right').find('.resume-box').append(intention.firstChild.data);//求职意向
+              }
             break;
           case 'education':
-            if(n.data) { $('.resume-right').find('.resume-box').append(education.firstChild.data); }//教育经历
+            if(n.data && n.status == 1) { $('.resume-right').find('.resume-box').append(education.firstChild.data); }//教育经历
             break;
           case 'work':
-            if(n.data) { $('.resume-right').find('.resume-box').append(work.firstChild.data); }//工作经历
+            if(n.data && n.status == 1) { $('.resume-right').find('.resume-box').append(work.firstChild.data); }//工作经历
             break;
           case 'appraise':
-            if(n.data.introduce !== '') { $('.resume-right').find('.resume-box').append(appraise.firstChild.data); }//自我评价
+            if(n.data.introduce !== '' && n.status == 1) { $('.resume-right').find('.resume-box').append(appraise.firstChild.data); }//自我评价
             break;
           case 'project':
-            if(n.data) { $('.resume-right').find('.resume-box').append(project.firstChild.data); }//项目经历
+            if(n.data && n.status == 1) { $('.resume-right').find('.resume-box').append(project.firstChild.data); }//项目经历
             break;
           case 'certificate':
-            if(n.data.skill !== '' && n.data.prove !== '') { $('.resume-right').find('.resume-box').append(certificate.firstChild.data); }//技能证书
+            if(n.data.skill !== '' && n.data.prove !== '' && n.status == 1) { $('.resume-right').find('.resume-box').append(certificate.firstChild.data); }//技能证书
             break;
           case 'association':
-            if(n.data) { $('.resume-right').find('.resume-box').append(association.firstChild.data); }//社团经历
+            if(n.data && n.status == 1) { $('.resume-right').find('.resume-box').append(association.firstChild.data); }//社团经历
             break;
         }
       })
     }
-    function resumeLeft(status) {
+    function renderCurrentResumeLeft() {
       $('.resume-left').find('.accordion').text(null);
       $.each(loadResumeModuleData, function(i, n) {
       switch(n.module) {
         case 'basic':
-          if(status !== 1 && status !== 2) {
-            $('.resume-left').find('.accordion').append(accordion.basic);//基本信息
-            $('.resume-left').find('.basic .collapse').addClass('show')
-          }else{
+          if(n.status == 1){
             $('.resume-left').find('.accordion').append(accordion.basic);//基本信息
           }
           break;
         case 'intention':
-          $('.resume-left').find('.accordion').append(accordion.intention);//求职意向
+          if(n.status == 1) {
+            $('.resume-left').find('.accordion').append(accordion.intention);//求职意向
+          }
           break;
         case 'education':
-          $('.resume-left').find('.accordion').append(accordion.education);//教育经历
+          if(n.status == 1) {
+            $('.resume-left').find('.accordion').append(accordion.education);//教育经历
+          }
           break;
         case 'work':
-          $('.resume-left').find('.accordion').append(accordion.work);//工作经历
+          if(n.status == 1) {
+            $('.resume-left').find('.accordion').append(accordion.work);//工作经历
+          }
           break;
         case 'appraise':
-          $('.resume-left').find('.accordion').append(accordion.appraise);//自我评价
+          if(n.status == 1) {
+            $('.resume-left').find('.accordion').append(accordion.appraise);//自我评价
+          }
           break;
         case 'project':
-          $('.resume-left').find('.accordion').append(accordion.project);//项目经历
+          if(n.status == 1) {
+            $('.resume-left').find('.accordion').append(accordion.project);//项目经历
+          }
           break;
         case 'certificate':
-          $('.resume-left').find('.accordion').append(accordion.certificate);//技能证书
+          if(n.status == 1) {
+            $('.resume-left').find('.accordion').append(accordion.certificate);//技能证书
+          }
           break;
         case 'association':
-          $('.resume-left').find('.accordion').append(accordion.association);//社团经历
+          if(n.status == 1) {
+            $('.resume-left').find('.accordion').append(accordion.association);//社团经历
+          }
           break;
       }
     })
     }
   }
 
-  //渲染简历数据
-  function renderResume() {
+  //编辑->渲染简历数据
+  function renderCurrentResume() {
     const loadResumeData = JSON.parse(resumeData.resume_data);
     $.each(loadResumeData, function(i, n) {
       switch(n.module) {
         case 'basic'://基本信息
-          $('.resume-left .basic').attr('data-order', i);//模块顺序
-          $('.resume-left .basic .resume-name').text(n.name);//模块名称
-          //左
-          $('.resume-left .basic .realname').val(n.data.realname);//姓名
-          $('.resume-left .basic .phone').val(n.data.phone);//手机号
-          $('.resume-left .basic .address').val(n.data.address);//地址
-          $('.resume-left .basic .email').val(n.data.email);//电子邮箱
-          $('.resume-left .basic .education').val(n.data.education);//最高学历
-          $('.resume-left .basic .work-time').val(n.data.work_time);//工作时间
-          $('.resume-left .basic .introduce').text(n.data.introduce);//自我介绍
-          //右
-          $('.resume-right .basic .realname').text(n.data.realname);//姓名
-          $('.resume-right .basic .phone').text(n.data.phone);//手机号
-          $('.resume-right .basic .email').text(n.data.email);//电子邮箱
-          $('.resume-right .basic .address').text(n.data.address);//地址
-          $('.resume-right .basic .education').text(n.data.education);//学历
-          $('.resume-right .basic .work-time').text(n.data.work_time);//工作实践
-          $('.resume-right .basic .introduce').text(n.data.introduce);//自我介绍
-          $('.resume-right .basic .avatar').attr('src', n.data.avatar);//个人头像
+          if(n.status == 1) {
+            $('.resume-left .basic').attr('data-order', i);//模块顺序
+            $('.resume-left .basic .resume-name').text(n.name);//模块名称
+            //左
+            $('.resume-left .basic .realname').val(n.data.realname);//姓名
+            $('.resume-left .basic .phone').val(n.data.phone);//手机号
+            $('.resume-left .basic .address').val(n.data.address);//地址
+            $('.resume-left .basic .email').val(n.data.email);//电子邮箱
+            $('.resume-left .basic .education').val(n.data.education);//最高学历
+            $('.resume-left .basic .work-time').val(n.data.work_time);//工作时间
+            $('.resume-left .basic .introduce').text(n.data.introduce);//自我介绍
+            //右
+            $('.resume-right .basic .realname').text(n.data.realname);//姓名
+            $('.resume-right .basic .phone').text(n.data.phone);//手机号
+            $('.resume-right .basic .email').text(n.data.email);//电子邮箱
+            $('.resume-right .basic .address').text(n.data.address);//地址
+            $('.resume-right .basic .education').text(n.data.education);//学历
+            $('.resume-right .basic .work-time').text(n.data.work_time);//工作实践
+            $('.resume-right .basic .introduce').text(n.data.introduce);//自我介绍
+            $('.resume-right .basic .avatar').attr('src', n.data.avatar);//个人头像
+          }
           break;
         case 'intention'://求职意向
-          $('.resume-left .intention').attr('data-order', i);//模块顺序
-          $('.resume-left .intention .resume-name').text(n.name);//模块名称
-          //左
-          $('.resume-left .intention .position').val(n.data.position);//姓名
-          $('.resume-left .intention .city').val(n.data.city);//手机号
-          $('.resume-left .intention .salary').val(n.data.salary);//地址
-          $('.resume-left .intention .arrive-time').val(n.data.arrive_time);//电子邮箱
-          //右
-          $('.resume-right .intention h6').text(n.name)
-          $('.resume-right .intention .position').text(n.data.position);//姓名
-          $('.resume-right .intention .city').text(n.data.city);//手机号
-          $('.resume-right .intention .salary').text(n.data.salary);//电子邮箱
-          $('.resume-right .intention .arrive-time').text(n.data.arrive_time);//地址
+          if(n.status == 1) {
+            $('.resume-left .intention').attr('data-order', i);//模块顺序
+            $('.resume-left .intention .resume-name').text(n.name);//模块名称
+            //左
+            $('.resume-left .intention .position').val(n.data.position);//姓名
+            $('.resume-left .intention .city').val(n.data.city);//手机号
+            $('.resume-left .intention .salary').val(n.data.salary);//地址
+            $('.resume-left .intention .arrive-time').val(n.data.arrive_time);//电子邮箱
+            //右
+            $('.resume-right .intention h6').text(n.name)
+            $('.resume-right .intention .position').text(n.data.position);//姓名
+            $('.resume-right .intention .city').text(n.data.city);//手机号
+            $('.resume-right .intention .salary').text(n.data.salary);//电子邮箱
+            $('.resume-right .intention .arrive-time').text(n.data.arrive_time);//地址
+          }
           break;
         case 'education'://教育经历
-          $('.resume-left .education').attr('data-order', i);//模块顺序
-          $('.resume-left .education .resume-name').text(n.name);//模块名称
-          const educationData = n.data;
-          var educationBox = '';
-          $.each(educationData, function(i, n) {//左
-            educationBox += '<div class="education-box-main">';
-            educationBox += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + Number(i + 1) + '<a href="javascript:void(0);" class="remove-button float-right font-size-13 font-weight-normal text-danger">删除模块</a></p>';
-            educationBox += '<p class="mb-1"><label for="school" class="font-size-14">学校</label><input type="text" class="form-control form-control-sm school" autocomplete="off" value="' + n.school + '"></p>';
-            educationBox += '<p class="mb-1"><label for="time" class="font-size-14">时间</label><input type="text" class="form-control form-control-sm time" autocomplete="off" value="' + n.time + '"></p>';
-            educationBox += '<p class="mb-1"><label for="city" class="font-size-14">城市</label><input type="text" class="form-control form-control-sm city" autocomplete="off" value="' + n.city + '"></p>';
-            educationBox += '<p class="mb-1"><label for="department" class="font-size-14">院系</label><input type="text" class="form-control form-control-sm department" autocomplete="off" value="' + n.department + '"></p>';
-            educationBox += '<p class="mb-1"><label for="level" class="font-size-14">层次</label><input type="text" class="form-control form-control-sm level" autocomplete="off" value="' + n.level + '"></p>';
-            educationBox += '<p class="mb-1"><label for="major" class="font-size-14">专业</label><input type="text" class="form-control form-control-sm major" autocomplete="off" value="' + n.major + '"></p>';
-            educationBox += '<p class="mb-1"><label for="content" class="font-size-14">内容</label><textarea class="form-control form-control-sm content" autocomplete="off">' + n.content + '</textarea>';
-            educationBox += '</div>';
-          });
-          $('.resume-left .education-box').html(educationBox);
-          educationBox = '';
-          $.each(educationData, function(i, n) {//右
-            n.content = n.content.replace(/\n/g, '<br />')
-            educationBox += '<div class="education-box-main">';
-            educationBox += '<div style="font-size: 13px;overflow: hidden;height: 30px;line-height: 35px;">';
-            educationBox += '<p style="width: 50%;float: left;"><span class="school" style="font-weight: bold;">' + n.school + '</span></p>';
-            educationBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
-            educationBox += '</div>';
-            educationBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
-            educationBox += '<p style="width: 50%;float: left;"><span class="department">' + n.department + ' ' + n.level + ' ' + n.major + '</span></p>';
-            educationBox += '<p style="width: 50%;float: right;text-align: right;"><span class="city">' + n.city + '</span></p>';
-            educationBox += '</div>';
-            educationBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
-            educationBox += '</div>';
-          });
-          $('.resume-right .education-box').html(educationBox);
+          if(n.status == 1) {
+            $('.resume-left .education').attr('data-order', i);//模块顺序
+            $('.resume-left .education .resume-name').text(n.name);//模块名称
+            const educationData = n.data;
+            var educationBox = '';
+            $.each(educationData, function(i, n) {//左
+              educationBox += '<div class="education-box-main">';
+              educationBox += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + Number(i + 1) + '<a href="javascript:void(0);" class="remove-button float-right font-size-13 font-weight-normal text-danger">删除模块</a></p>';
+              educationBox += '<p class="mb-1"><label for="school" class="font-size-14">学校</label><input type="text" class="form-control form-control-sm school" autocomplete="off" value="' + n.school + '"></p>';
+              educationBox += '<p class="mb-1"><label for="time" class="font-size-14">时间</label><input type="text" class="form-control form-control-sm time" autocomplete="off" value="' + n.time + '"></p>';
+              educationBox += '<p class="mb-1"><label for="city" class="font-size-14">城市</label><input type="text" class="form-control form-control-sm city" autocomplete="off" value="' + n.city + '"></p>';
+              educationBox += '<p class="mb-1"><label for="department" class="font-size-14">院系</label><input type="text" class="form-control form-control-sm department" autocomplete="off" value="' + n.department + '"></p>';
+              educationBox += '<p class="mb-1"><label for="level" class="font-size-14">层次</label><input type="text" class="form-control form-control-sm level" autocomplete="off" value="' + n.level + '"></p>';
+              educationBox += '<p class="mb-1"><label for="major" class="font-size-14">专业</label><input type="text" class="form-control form-control-sm major" autocomplete="off" value="' + n.major + '"></p>';
+              educationBox += '<p class="mb-1"><label for="content" class="font-size-14">内容</label><textarea class="form-control form-control-sm content" autocomplete="off">' + n.content + '</textarea>';
+              educationBox += '</div>';
+            });
+            $('.resume-left .education-box').html(educationBox);
+            educationBox = '';
+            $.each(educationData, function(i, n) {//右
+              n.content = n.content.replace(/\n/g, '<br />')
+              educationBox += '<div class="education-box-main">';
+              educationBox += '<div style="font-size: 13px;overflow: hidden;height: 30px;line-height: 35px;">';
+              educationBox += '<p style="width: 50%;float: left;"><span class="school" style="font-weight: bold;">' + n.school + '</span></p>';
+              educationBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
+              educationBox += '</div>';
+              educationBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
+              educationBox += '<p style="width: 50%;float: left;"><span class="department">' + n.department + ' ' + n.level + ' ' + n.major + '</span></p>';
+              educationBox += '<p style="width: 50%;float: right;text-align: right;"><span class="city">' + n.city + '</span></p>';
+              educationBox += '</div>';
+              educationBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
+              educationBox += '</div>';
+            });
+            $('.resume-right .education-box').html(educationBox);
+          }
           break;
         case 'work'://工作经历
-        $('.resume-left .work').attr('data-order', i);//模块顺序
-        $('.resume-left .work .resume-name').text(n.name);//模块名称
-          const workData = n.data;
-          var workBox = '';
-          $.each(workData, function(i, n) {//左
-            workBox += '<div class="work-box-main">';
-            workBox += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + Number(i + 1) + '<a href="javascript:void(0);" class="remove-button float-right font-size-13 font-weight-normal text-danger">删除模块</a></p>';
-            workBox += '<p class="mb-1"><label for="company" class="font-size-14">公司</label><input type="text" class="form-control form-control-sm company" autocomplete="off" value="' + n.company + '"></p>';
-            workBox += '<p class="mb-1"><label for="time" class="font-size-14">时间</label><input type="text" class="form-control form-control-sm time" autocomplete="off" value="' + n.time + '"></p>';
-            workBox += '<p class="mb-1"><label for="position" class="font-size-14">职位</label><input type="text" class="form-control form-control-sm position" autocomplete="off" value="' + n.position + '"></p>';
-            workBox += '<p class="mb-1"><label for="city" class="font-size-14">城市</label><input type="text" class="form-control form-control-sm city" autocomplete="off" value="' + n.city + '"></p>';
-            workBox += '<p class="mb-1"><label for="content" class="font-size-14">内容</label><textarea class="form-control form-control-sm content" autocomplete="off">' + n.content + '</textarea>';
-            workBox += '</div>';
-          });
-          $('.resume-left .work-box').html(workBox);
-          workBox = '';
-          $.each(workData, function(i, n) {//右
-            n.content = n.content.replace(/\n/g, '<br />')
-            workBox += '<div class="work-box-main">';
-            workBox += '<div style="font-size: 13px;overflow: hidden;height: 30px;line-height: 35px;">';
-            workBox += '<p style="width: 50%;float: left;"><span class="company" style="font-weight: bold;">' + n.company + '</span></p>';
-            workBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
-            workBox += '</div>';
-            workBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
-            workBox += '<p style="width: 50%;float: left;"><span class="position">' + n.position + '</span></p>';
-            workBox += '<p style="width: 50%;float: right;text-align: right;"><span class="city">' + n.city + '</span></p>';
-            workBox += '</div>';
-            workBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
-            workBox += '</div>';
-          });
-          $('.resume-right .work-box').html(workBox);
+          if(n.status == 1) {
+            $('.resume-left .work').attr('data-order', i);//模块顺序
+            $('.resume-left .work .resume-name').text(n.name);//模块名称
+              const workData = n.data;
+              var workBox = '';
+              $.each(workData, function(i, n) {//左
+                workBox += '<div class="work-box-main">';
+                workBox += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + Number(i + 1) + '<a href="javascript:void(0);" class="remove-button float-right font-size-13 font-weight-normal text-danger">删除模块</a></p>';
+                workBox += '<p class="mb-1"><label for="company" class="font-size-14">公司</label><input type="text" class="form-control form-control-sm company" autocomplete="off" value="' + n.company + '"></p>';
+                workBox += '<p class="mb-1"><label for="time" class="font-size-14">时间</label><input type="text" class="form-control form-control-sm time" autocomplete="off" value="' + n.time + '"></p>';
+                workBox += '<p class="mb-1"><label for="position" class="font-size-14">职位</label><input type="text" class="form-control form-control-sm position" autocomplete="off" value="' + n.position + '"></p>';
+                workBox += '<p class="mb-1"><label for="city" class="font-size-14">城市</label><input type="text" class="form-control form-control-sm city" autocomplete="off" value="' + n.city + '"></p>';
+                workBox += '<p class="mb-1"><label for="content" class="font-size-14">内容</label><textarea class="form-control form-control-sm content" autocomplete="off">' + n.content + '</textarea>';
+                workBox += '</div>';
+              });
+              $('.resume-left .work-box').html(workBox);
+              workBox = '';
+              $.each(workData, function(i, n) {//右
+                n.content = n.content.replace(/\n/g, '<br />')
+                workBox += '<div class="work-box-main">';
+                workBox += '<div style="font-size: 13px;overflow: hidden;height: 30px;line-height: 35px;">';
+                workBox += '<p style="width: 50%;float: left;"><span class="company" style="font-weight: bold;">' + n.company + '</span></p>';
+                workBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
+                workBox += '</div>';
+                workBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
+                workBox += '<p style="width: 50%;float: left;"><span class="position">' + n.position + '</span></p>';
+                workBox += '<p style="width: 50%;float: right;text-align: right;"><span class="city">' + n.city + '</span></p>';
+                workBox += '</div>';
+                workBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
+                workBox += '</div>';
+              });
+              $('.resume-right .work-box').html(workBox);
+          }
           break;
         case 'association'://社团经历
-          $('.resume-left .association').attr('data-order', i);//模块顺序
-          $('.resume-left .association .resume-name').text(n.name);//模块名称
-          const associationData = n.data;
-          var associationBox = '';
-          $.each(associationData, function(i, n) {//左
-            associationBox += '<div class="association-box-main">';
-            associationBox += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + Number(i + 1) + '<a href="javascript:void(0);" class="remove-button float-right font-size-13 font-weight-normal text-danger">删除模块</a></p>';
-            associationBox += '<p class="mb-1"><label for="association" class="font-size-14">社团</label><input type="text" class="form-control form-control-sm association" autocomplete="off" value="' + n.association + '"></p>';
-            associationBox += '<p class="mb-1"><label for="time" class="font-size-14">时间</label><input type="text" class="form-control form-control-sm time" autocomplete="off" value="' + n.time + '"></p>';
-            associationBox += '<p class="mb-1"><label for="position" class="font-size-14">职位</label><input type="text" class="form-control form-control-sm position" autocomplete="off" value="' + n.position + '"></p>';
-            associationBox += '<p class="mb-1"><label for="content" class="font-size-14">内容</label><textarea class="form-control form-control-sm content" autocomplete="off">' + n.content + '</textarea>';
-            associationBox += '</div>';
-          });
-          $('.resume-left .association-box').html(associationBox);
-          associationBox = '';
-          $.each(associationData, function(i, n) {//右
-            n.content = n.content.replace(/\n/g, '<br />')
-            associationBox += '<div class="association-box-main">';
-            associationBox += '<div style="font-size: 13px;overflow: hidden;height: 30px;line-height: 35px;">';
-            associationBox += '<p style="width: 50%;float: left;"><span class="association" style="font-weight: bold;">' + n.association + '</span></p>';
-            associationBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
-            associationBox += '</div>';
-            associationBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
-            associationBox += '<p style="width: 50%;float: left;"><span class="position">' + n.position + '</span></p>';
-            associationBox += '</div>';
-            associationBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
-            associationBox += '</div>';
-          });
-          $('.resume-right .association-box').html(associationBox);
+          if(n.status == 1) {
+            $('.resume-left .association').attr('data-order', i);//模块顺序
+            $('.resume-left .association .resume-name').text(n.name);//模块名称
+            const associationData = n.data;
+            var associationBox = '';
+            $.each(associationData, function(i, n) {//左
+              associationBox += '<div class="association-box-main">';
+              associationBox += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + Number(i + 1) + '<a href="javascript:void(0);" class="remove-button float-right font-size-13 font-weight-normal text-danger">删除模块</a></p>';
+              associationBox += '<p class="mb-1"><label for="association" class="font-size-14">社团</label><input type="text" class="form-control form-control-sm association" autocomplete="off" value="' + n.association + '"></p>';
+              associationBox += '<p class="mb-1"><label for="time" class="font-size-14">时间</label><input type="text" class="form-control form-control-sm time" autocomplete="off" value="' + n.time + '"></p>';
+              associationBox += '<p class="mb-1"><label for="position" class="font-size-14">职位</label><input type="text" class="form-control form-control-sm position" autocomplete="off" value="' + n.position + '"></p>';
+              associationBox += '<p class="mb-1"><label for="content" class="font-size-14">内容</label><textarea class="form-control form-control-sm content" autocomplete="off">' + n.content + '</textarea>';
+              associationBox += '</div>';
+            });
+            $('.resume-left .association-box').html(associationBox);
+            associationBox = '';
+            $.each(associationData, function(i, n) {//右
+              n.content = n.content.replace(/\n/g, '<br />')
+              associationBox += '<div class="association-box-main">';
+              associationBox += '<div style="font-size: 13px;overflow: hidden;height: 30px;line-height: 35px;">';
+              associationBox += '<p style="width: 50%;float: left;"><span class="association" style="font-weight: bold;">' + n.association + '</span></p>';
+              associationBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
+              associationBox += '</div>';
+              associationBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
+              associationBox += '<p style="width: 50%;float: left;"><span class="position">' + n.position + '</span></p>';
+              associationBox += '</div>';
+              associationBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
+              associationBox += '</div>';
+            });
+            $('.resume-right .association-box').html(associationBox);
+          }
           break;
         case 'project'://项目经历
-          $('.resume-left .project').attr('data-order', i);//模块顺序
-          $('.resume-left .project .resume-name').text(n.name);//模块名称
-          const projectData = n.data;
-          var projectBox = '';
-          $.each(projectData, function(i, n) {//左
-            projectBox += '<div class="project-box-main">';
-            projectBox += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + Number(i + 1) + '<a href="javascript:void(0);" class="remove-button float-right font-size-13 font-weight-normal text-danger">删除模块</a></p>';
-            projectBox += '<p class="mb-1"><label for="project" class="font-size-14">项目</label><input type="text" class="form-control form-control-sm project" autocomplete="off" value="' + n.project + '"></p>';
-            projectBox += '<p class="mb-1"><label for="time" class="font-size-14">时间</label><input type="text" class="form-control form-control-sm time" autocomplete="off" value="' + n.time + '"></p>';
-            projectBox += '<p class="mb-1"><label for="position" class="font-size-14">职位</label><input type="text" class="form-control form-control-sm position" autocomplete="off" value="' + n.position + '"></p>';
-            projectBox += '<p class="mb-1"><label for="content" class="font-size-14">内容</label><textarea class="form-control form-control-sm content" autocomplete="off">' + n.content + '</textarea>';
-            projectBox += '</div>';
-          });
-          $('.resume-left .project-box').html(projectBox);
-          projectBox = '';
-          $.each(projectData, function(i, n) {//右
-            n.content = n.content.replace(/\n/g, '<br />')
-            projectBox += '<div class="project-box-main">';
-            projectBox += '<div style="font-size: 13px;overflow: hidden;height: 30px;line-height: 35px;">';
-            projectBox += '<p style="width: 50%;float: left;"><span class="project" style="font-weight: bold;">' + n.project + '</span></p>';
-            projectBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
-            projectBox += '</div>';
-            projectBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
-            projectBox += '<p style="width: 50%;float: left;"><span class="position">' + n.position + '</span></p>';
-            projectBox += '</div>';
-            projectBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
-            projectBox += '</div>';
-          });
-          $('.resume-right .project-box').html(projectBox);
+          if(n.status == 1) {
+            $('.resume-left .project').attr('data-order', i);//模块顺序
+            $('.resume-left .project .resume-name').text(n.name);//模块名称
+            const projectData = n.data;
+            var projectBox = '';
+            $.each(projectData, function(i, n) {//左
+              projectBox += '<div class="project-box-main">';
+              projectBox += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + Number(i + 1) + '<a href="javascript:void(0);" class="remove-button float-right font-size-13 font-weight-normal text-danger">删除模块</a></p>';
+              projectBox += '<p class="mb-1"><label for="project" class="font-size-14">项目</label><input type="text" class="form-control form-control-sm project" autocomplete="off" value="' + n.project + '"></p>';
+              projectBox += '<p class="mb-1"><label for="time" class="font-size-14">时间</label><input type="text" class="form-control form-control-sm time" autocomplete="off" value="' + n.time + '"></p>';
+              projectBox += '<p class="mb-1"><label for="position" class="font-size-14">职位</label><input type="text" class="form-control form-control-sm position" autocomplete="off" value="' + n.position + '"></p>';
+              projectBox += '<p class="mb-1"><label for="content" class="font-size-14">内容</label><textarea class="form-control form-control-sm content" autocomplete="off">' + n.content + '</textarea>';
+              projectBox += '</div>';
+            });
+            $('.resume-left .project-box').html(projectBox);
+            projectBox = '';
+            $.each(projectData, function(i, n) {//右
+              n.content = n.content.replace(/\n/g, '<br />')
+              projectBox += '<div class="project-box-main">';
+              projectBox += '<div style="font-size: 13px;overflow: hidden;height: 30px;line-height: 35px;">';
+              projectBox += '<p style="width: 50%;float: left;"><span class="project" style="font-weight: bold;">' + n.project + '</span></p>';
+              projectBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
+              projectBox += '</div>';
+              projectBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
+              projectBox += '<p style="width: 50%;float: left;"><span class="position">' + n.position + '</span></p>';
+              projectBox += '</div>';
+              projectBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
+              projectBox += '</div>';
+            });
+            $('.resume-right .project-box').html(projectBox);
+          }
           break;
         case 'certificate'://技能证书
-          $('.resume-left .certificate').attr('data-order', i);//模块顺序
-          $('.resume-left .certificate .resume-name').text(n.name);//模块名称
-          //左
-          $('.resume-left .certificate .skill').text(n.data.skill);//技能
-          $('.resume-left .certificate .prove').text(n.data.prove);//证书
-          //右
-          $('.resume-right .certificate .skill').text(n.data.skill);//技能
-          $('.resume-right .certificate .prove').text(n.data.prove);//证书
+          if(n.status == 1) {
+            $('.resume-left .certificate').attr('data-order', i);//模块顺序
+            $('.resume-left .certificate .resume-name').text(n.name);//模块名称
+            //左
+            $('.resume-left .certificate .skill').text(n.data.skill);//技能
+            $('.resume-left .certificate .prove').text(n.data.prove);//证书
+            //右
+            $('.resume-right .certificate .skill').text(n.data.skill);//技能
+            $('.resume-right .certificate .prove').text(n.data.prove);//证书
+          }
           break;
         case 'appraise'://自我介绍
-          $('.resume-left .appraise').attr('data-order', i);//模块顺序
-          $('.resume-left .appraise .resume-name').text(n.name);//模块名称
-          //左
-          $('.resume-left .appraise .introduce').text(n.data.introduce);//自我介绍
-          //右
-          $('.resume-right .appraise .introduce').text(n.data.introduce);//自我介绍
+          if(n.status == 1) {
+            $('.resume-left .appraise').attr('data-order', i);//模块顺序
+            $('.resume-left .appraise .resume-name').text(n.name);//模块名称
+            //左
+            $('.resume-left .appraise .introduce').text(n.data.introduce);//自我介绍
+            //右
+            $('.resume-right .appraise .introduce').text(n.data.introduce);//自我介绍
+          }
           break;
-      
       }
     })
 
@@ -533,16 +566,25 @@ $(document).ready(() => {
       var removeConfirm = confirm('确定删除当前模块？');
       if(removeConfirm) {
         $(this).parent().parent().remove();
-        message('删除成功','success')
+        message('已删除，请保存更改！','success');
       }
     })
+    
+    //执行->模块排序
+    renderCurrentResumeSort();
 
-    //保存内容
-    $('.save-button').click(function() {
-      var saveData;//需要保存的内容
-      var dataOrder;//模块顺序
+    //执行->模块开关
+    renderCurrentResumeModule();
+
+    //关闭效果
+    $('.waiting').remove();
+
+    //编辑->保存内容
+    $('.accordion').find('.save-button').click(function() {
+      var saveData;//保存数据
+      var dataSort;//模块排序
       if($(this).parents('.basic').attr('data-order')) {
-        dataOrder = $(this).parents('.basic').attr('data-order');
+        dataSort = $(this).parents('.basic').attr('data-order');
         const realname = $('.resume-left .basic .realname').val();//姓名
         const phone = $('.resume-left .basic .phone').val();//手机
         const address = $('.resume-left .basic .address').val();//地址
@@ -553,14 +595,14 @@ $(document).ready(() => {
         const avatar = 'http://image-workercv.test.upcdn.net/009862297f62849aefef6a6687a71c7d.jpg';//个人头像
         saveData = { realname, phone, address, email, education, work_time, introduce, avatar }
       }else if($(this).parents('.intention').attr('data-order')) { //求职意向
-        dataOrder = $(this).parents('.intention').attr('data-order');
+        dataSort = $(this).parents('.intention').attr('data-order');
         const position = $('.resume-left .intention .position').val();//职位
         const city = $('.resume-left .intention .city').val();//城市
         const salary = $('.resume-left .intention .salary').val();//薪资
         const arrive_time = $('.resume-left .intention .arrive-time').val();//到岗时间
         saveData = { position, city, salary, arrive_time }
       }else if($(this).parents('.education').attr('data-order')) {
-        dataOrder = $(this).parents('.education').attr('data-order');
+        dataSort = $(this).parents('.education').attr('data-order');
         var educationArray = [];//教育经历->全部数组
         $('.resume-left').find('.education-box-main').each(function(i) {
           var educationObject = {};//教育经历->单个对象
@@ -575,7 +617,7 @@ $(document).ready(() => {
           saveData = educationArray;
         })
       }else if($(this).parents('.work').attr('data-order')) {
-        dataOrder = $(this).parents('.work').attr('data-order');
+        dataSort = $(this).parents('.work').attr('data-order');
         var workArray = [];//工作经历->全部数组
         $('.resume-left').find('.work-box-main').each(function(i) {
           var workObject = {};//工作经历->单个对象
@@ -588,7 +630,7 @@ $(document).ready(() => {
           saveData = workArray;
         })
       }else if($(this).parents('.project').attr('data-order')) {
-        dataOrder = $(this).parents('.project').attr('data-order');
+        dataSort = $(this).parents('.project').attr('data-order');
         var projectArray = [];//项目经历->全部数组
         $('.resume-left').find('.project-box-main').each(function(i) {
           var projectObject = {};//项目经历->单个对象
@@ -600,7 +642,7 @@ $(document).ready(() => {
           saveData = projectArray;
         })
       }else if($(this).parents('.association').attr('data-order')) {
-        dataOrder = $(this).parents('.association').attr('data-order');
+        dataSort = $(this).parents('.association').attr('data-order');
         var associationArray = [];//社团经历->全部数组
         $('.resume-left').find('.association-box-main').each(function(i) {
           var associationObject = {};//社团经历->单个对象
@@ -612,14 +654,14 @@ $(document).ready(() => {
           saveData = associationArray;
         })
       }else if($(this).parents('.certificate').attr('data-order')) {
-        dataOrder = $(this).parents('.certificate').attr('data-order');
+        dataSort = $(this).parents('.certificate').attr('data-order');
         $('.resume-left').find('.certificate-box').each(function(i) {
           const skill = $('.resume-left .certificate .skill').val();//技能
           const prove = $('.resume-left .certificate .prove').val();//证书
           saveData = { skill, prove }
         })
       }else if($(this).parents('.appraise').attr('data-order')) {
-        dataOrder = $(this).parents('.appraise').attr('data-order');
+        dataSort = $(this).parents('.appraise').attr('data-order');
         $('.resume-left').find('.appraise-box').each(function(i) {
           const introduce = $('.resume-left .appraise .introduce').val();//自我评价
           saveData = { introduce }
@@ -627,7 +669,7 @@ $(document).ready(() => {
       }
       var saveResumeData = resumeData.resume_data;//老数据
       if(typeof saveResumeData == 'string') { saveResumeData = JSON.parse(saveResumeData); }
-      saveResumeData[Number(dataOrder)].data = saveData;//插入新数据
+      saveResumeData[Number(dataSort)].data = saveData;//插入新数据
       $.ajax({
         url: baseURL + '/saveCurrentResume',
         type: 'post',
@@ -635,16 +677,376 @@ $(document).ready(() => {
         timeout: 5000,
         headers: { 'x-csrf-token': $.cookie('csrfToken') },
         data: { resumeKey, saveResumeData },
-        success: ((response) => { getResume(1); message('已保存', 'success'); }),
+        success: ((response) => { getCurrentResume(1); message('已保存', 'success'); }),
         error: ((error) => { message('保存失败', 'danger'); return false; })
       })
     })
 
-    //关闭效果
-    $('.waiting').remove();
   };
 
-  
+  //排序->渲染模块
+  function renderCurrentResumeSort() {
+    var publicResumeSortData;
+    $('.resume-left').find('.sort').html('');
+    var loadResumeSortData = JSON.parse(resumeData.resume_data);
+    eachResumeSortData();//遍历模块排序
+    function eachResumeSortData() {
+      $.each(loadResumeSortData, function(i, n) {
+        switch(n.module) {
+          case "basic"://基本信息
+            if(n.status == 1) {
+              $('.resume-left').find('.sort').append('\
+                <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
+                  <span class="resume-module-name font-size-14 float-left">基本信息</span>\
+                  <span class="float-right font-size-14">\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                  </span>\
+                </li>\
+              ')
+            }
+          break;
+          case "intention"://求职意向
+            if(n.status == 1) {
+              $('.resume-left').find('.sort').append('\
+                <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
+                  <span class="resume-module-name font-size-14 float-left">求职意向</span>\
+                  <span class="float-right font-size-14">\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                  </span>\
+                </li>\
+              ')
+            }
+          break;
+          case "education"://教育经历
+            if(n.status == 1) {
+              $('.resume-left').find('.sort').append('\
+                <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
+                  <span class="resume-module-name font-size-14 float-left">教育经历</span>\
+                  <span class="float-right font-size-14">\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                  </span>\
+                </li>\
+              ')
+            }
+          break;
+          case "work"://工作经历
+            if(n.status == 1) {
+              $('.resume-left').find('.sort').append('\
+                <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
+                  <span class="resume-module-name font-size-14 float-left">工作经历</span>\
+                  <span class="float-right font-size-14">\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                  </span>\
+                </li>\
+              ')
+            }
+          break;
+          case "project"://项目经历
+            if(n.status == 1) {
+              $('.resume-left').find('.sort').append('\
+                <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
+                  <span class="resume-module-name font-size-14 float-left">项目经历</span>\
+                  <span class="float-right font-size-14">\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                  </span>\
+                </li>\
+              ')
+            }
+          break;
+          case "association"://社团经历
+            if(n.status == 1) {
+              $('.resume-left').find('.sort').append('\
+                <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
+                  <span class="resume-module-name font-size-14 float-left">社团经历</span>\
+                  <span class="float-right font-size-14">\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                  </span>\
+                </li>\
+              ')
+            }
+          break;
+          case "certificate"://技能证书
+            if(n.status == 1) {
+              $('.resume-left').find('.sort').append('\
+                <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
+                  <span class="resume-module-name font-size-14 float-left">技能证书</span>\
+                  <span class="float-right font-size-14">\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                  </span>\
+                </li>\
+              ')
+            }
+          break;
+          case "appraise"://自我介绍
+            if(n.status == 1) {
+              $('.resume-left').find('.sort').append('\
+                <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
+                  <span class="resume-module-name font-size-14 float-left">自我介绍</span>\
+                  <span class="float-right font-size-14">\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                  </span>\
+                </li>\
+              ')
+            }
+          break;
+        }
+      })
+      $('.resume-left').find('.sort').append('\<button type="button" class="btn btn-sm btn-dark mt-3 save-sort-button">保存更改</button>');
+    }
+    
+    //上移
+    $(document).on('click', '.up-shift', function() {
+      const sortId = Number($(this).parents('.list-group-item').attr('data-sort'));
+      if(sortId <= 1) {
+        message('无法上移', 'danger');
+      }else{
+        loadResumeSortData[sortId] = loadResumeSortData.splice(sortId - 1, 1, loadResumeSortData[sortId])[0];
+        publicResumeSortData = loadResumeSortData;
+        $('.resume-left').find('.sort').html('');
+        eachResumeSortData();
+      }
+    })
+
+    //下移
+    $(document).on('click', '.down-shift', function() {
+      const sortId = Number($(this).parents('.list-group-item').attr('data-sort'));
+      if(sortId == 7) {
+        message('无法下移', 'danger');
+      }else{
+        loadResumeSortData[sortId] = loadResumeSortData.splice(sortId + 1, 1, loadResumeSortData[sortId])[0];
+        publicResumeSortData = loadResumeSortData;
+        $('.resume-left').find('.sort').html('');
+        eachResumeSortData();
+      }
+    })
+
+    //保存排序
+    $(document).on('click', '.sort .save-sort-button', function() {
+      $.ajax({
+        url: baseURL + '/saveCurrentResume',
+        type: 'post',
+        dataType: 'json',
+        timeout: 5000,
+        headers: { 'x-csrf-token': $.cookie('csrfToken') },
+        data: { resumeKey, saveResumeData: publicResumeSortData },
+        success: ((response) => { getCurrentResume(); message('已保存', 'success'); }),
+        error: ((error) => { message('保存失败', 'danger'); return false; })
+      })
+    })
+  }
+
+  //模块->模块开关
+  function renderCurrentResumeModule() {
+    var publicResumeModuleData;
+    $('.resume-left').find('.module').find('.module-on').html('');
+    $('.resume-left').find('.module').find('.module-off').html('');
+    var loadResumeModuleData = JSON.parse(resumeData.resume_data);
+    eachModuleOnData();//已开启的模块
+    function eachModuleOnData() {
+      $.each(loadResumeModuleData, function(i, n) {
+        switch(n.module) {
+          case "basic":
+            if(n.status == 1) {
+              $('.resume-left').find('.module-on').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">基本信息</span>\
+                <span class="float-right font-size-20">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "intention":
+            if(n.status == 1) {
+              $('.resume-left').find('.module-on').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">求职意向</span>\
+                <span class="float-right font-size-20">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "education":
+            if(n.status == 1) {
+              $('.resume-left').find('.module-on').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">教育经历</span>\
+                <span class="float-right font-size-20">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "work":
+            if(n.status == 1) {
+              $('.resume-left').find('.module-on').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">工作经历</span>\
+                <span class="float-right font-size-20">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "project":
+            if(n.status == 1) {
+              $('.resume-left').find('.module-on').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">项目经历</span>\
+                <span class="float-right font-size-20">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "association":
+            if(n.status == 1) {
+              $('.resume-left').find('.module-on').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">社团经历</span>\
+                <span class="float-right font-size-20">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "certificate":
+            if(n.status == 1) {
+              $('.resume-left').find('.module-on').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">技能证书</span>\
+                <span class="float-right font-size-20">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "appraise":
+            if(n.status == 1) {
+              $('.resume-left').find('.module-on').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">自我介绍</span>\
+                <span class="float-right font-size-20">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                </span>\
+              </li>')
+            }
+          break;
+        }
+      })
+      if($('.resume-left').find('.module-on').html() == '') {
+        $('.resume-left').find('.module-on').html('<span class="text-secondary font-size-14 text-center">全部已关闭</span>')
+      }
+    }
+    eachModuleoffData();//已开启的模块
+    function eachModuleoffData() {
+      $.each(loadResumeModuleData, function(i, n) {
+        switch(n.module) {
+          case "basic":
+            if(n.status == 0) {
+              $('.resume-left').find('.module-off').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">基本信息</span>\
+                <span class="float-right font-size-16">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "intention":
+            if(n.status == 0) {
+              $('.resume-left').find('.module-off').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">求职意向</span>\
+                <span class="float-right font-size-16">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "education":
+            if(n.status == 0) {
+              $('.resume-left').find('.module-off').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">教育经历</span>\
+                <span class="float-right font-size-16">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "work":
+            if(n.status == 0) {
+              $('.resume-left').find('.module-off').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">工作经历</span>\
+                <span class="float-right font-size-16">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "project":
+            if(n.status == 0) {
+              $('.resume-left').find('.module-off').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">项目经历</span>\
+                <span class="float-right font-size-16">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "association":
+            if(n.status == 0) {
+              $('.resume-left').find('.module-off').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">社团经历</span>\
+                <span class="float-right font-size-16">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "certificate":
+            if(n.status == 0) {
+              $('.resume-left').find('.module-off').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">技能证书</span>\
+                <span class="float-right font-size-16">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                </span>\
+              </li>')
+            }
+          break;
+          case "appraise":
+            if(n.status == 0) {
+              $('.resume-left').find('.module-off').append('\
+                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <span class="module-name font-size-14 float-left">自我介绍</span>\
+                <span class="float-right font-size-16">\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                </span>\
+              </li>')
+            }
+          break;
+        }
+      })
+      if($('.resume-left').find('.module-off').html() == '') {
+        $('.resume-left').find('.module-off').html('<span class="text-secondary font-size-14 text-center">全部已开启</span>')
+      }
+    }
+  }
+
   //退出登录
   $('#logOut').click(() => {
     logOut();

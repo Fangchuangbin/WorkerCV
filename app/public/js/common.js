@@ -8,7 +8,7 @@ function logOut() {
 
 //提示框
 function message(content, type) {
-  $('.header').find('.message').remove();
+  $('.header').find('.message').css('opacity', '0');
   $('.header').append('<div class="message alert font-size-14 py-2 px-4 alert-' + type + '" role="alert">' + content + '</div>');
   setTimeout(() => { $('.header').find('.message').css('margin-top', '10px');}, 100)
   setTimeout(() => {
