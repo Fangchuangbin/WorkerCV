@@ -3,6 +3,11 @@
 const Controller = require('egg').Controller;
 const crypto = require('crypto');
 
+
+//公共变量
+var success = { code: 20000, message: '请求成功' };
+var fail = { code: 40000, message: '请求失败' }
+
 class CommonController extends Controller {
 
   //接口->登录
@@ -22,11 +27,6 @@ class CommonController extends Controller {
 
   //接口->登录状态
   async loginStatus() {
-
-    //公共变量
-    var success = { code: 20000, message: '请求成功' };
-    var fail = { code: 40000, message: '请求失败' }
-
     const { ctx } = this;
     var loginToken = ctx.cookies.get('loginToken');
     

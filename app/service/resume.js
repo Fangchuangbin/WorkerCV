@@ -51,10 +51,10 @@ class ResumeService extends Service {
   }
   
   //更新内容->基本信息
-  async saveResume(resumeData) {
+  async saveCurrentResume(resumeData) {
     const { ctx, app } = this;
-    const saveResume = await app.mysql.update('workercv_resume', { resume_data: JSON.stringify(resumeData.saveResumeData) }, { where: { resume_key: resumeData.resumeKey } })
-    if(saveResume.affectedRows === 1) {
+    const saveCurrentResume = await app.mysql.update('workercv_resume', { resume_data: JSON.stringify(resumeData.saveResumeData) }, { where: { resume_key: resumeData.resumeKey } })
+    if(saveCurrentResume.affectedRows === 1) {
       return { result: success }
     }else{
       return { result: fail }

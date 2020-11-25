@@ -26,7 +26,7 @@ class CommonService extends Service {
     }
   }
 
-  //保存loginToken
+  //登录成功->保存loginToken
   async loginToken(token, loginData) {
     const { ctx, app } = this;
     const emailRule = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;

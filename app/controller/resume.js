@@ -3,11 +3,10 @@
 const Controller = require('egg').Controller;
 const wkhtmltopdf = require('wkhtmltopdf');
 const fs = require('fs');
-const { get } = require('http');
 
 //我的简历
 class ResumeController extends Controller {
-  //模板->我的简历
+  //模板->我的简历->列表
   async index() {
     const { ctx } = this;
     var loginToken = ctx.cookies.get('loginToken');
@@ -20,11 +19,7 @@ class ResumeController extends Controller {
   //模板->编辑简历
   async edit() {
     const { ctx } = this;
-    var resumeKey = ctx.params.resumeKey;
-    const getResumeContent = await ctx.service.resume.getResumeContent(resumeKey);//简历详情
-    await ctx.render('resume/edit', {
-      resumeKey: getResumeContent.getResumeContent.resume_key,//简历详情
-    })
+    await ctx.render('resume/edit');
   }
 
   //接口->下载简历
@@ -58,11 +53,11 @@ class ResumeController extends Controller {
   }
 
   //接口->保存内容
-  async saveResume() {
+  async saveCurrentResume() {
     const { ctx } = this;
     const resumeData = ctx.request.body;
-    const saveResume = await ctx.service.resume.saveResume(resumeData);
-    ctx.body = saveResume;
+    const saveCurrentResume = await ctx.service.resume.saveCurrentResume(resumeData);
+    ctx.body = saveCurrentResume;
   }
 
 }

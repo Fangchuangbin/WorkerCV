@@ -19,5 +19,5 @@ module.exports = app => {
   router.post('/downloadResume', token, controller.resume.downloadResume);//下载简历
   router.post('/getCurrentResume', token, controller.resume.getCurrentResume);//获取当前简历所属模板
   router.post('/getCurrentResumeTemplate', token, controller.resume.getCurrentResumeTemplate);//获取当前简历所属模板
-  router.post('/saveResume', token, controller.resume.saveResume);//保存内容
+  router.post('/saveCurrentResume', token, controller.resume.saveCurrentResume);//保存内容
 };
