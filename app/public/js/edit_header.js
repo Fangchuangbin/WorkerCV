@@ -691,6 +691,7 @@ $(document).ready(() => {
     var loadResumeSortData = JSON.parse(resumeData.resume_data);
     eachResumeSortData();//遍历模块排序
     function eachResumeSortData() {
+      $('.resume-left').find('.sort').html('');
       $.each(loadResumeSortData, function(i, n) {
         switch(n.module) {
           case "basic"://基本信息
@@ -699,8 +700,8 @@ $(document).ready(() => {
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
                   <span class="resume-module-name font-size-14 float-left">基本信息</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -712,8 +713,8 @@ $(document).ready(() => {
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
                   <span class="resume-module-name font-size-14 float-left">求职意向</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -725,8 +726,8 @@ $(document).ready(() => {
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
                   <span class="resume-module-name font-size-14 float-left">教育经历</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -738,8 +739,8 @@ $(document).ready(() => {
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
                   <span class="resume-module-name font-size-14 float-left">工作经历</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -751,8 +752,8 @@ $(document).ready(() => {
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
                   <span class="resume-module-name font-size-14 float-left">项目经历</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -764,8 +765,8 @@ $(document).ready(() => {
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
                   <span class="resume-module-name font-size-14 float-left">社团经历</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -777,8 +778,8 @@ $(document).ready(() => {
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
                   <span class="resume-module-name font-size-14 float-left">技能证书</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -790,8 +791,8 @@ $(document).ready(() => {
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
                   <span class="resume-module-name font-size-14 float-left">自我介绍</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -805,12 +806,11 @@ $(document).ready(() => {
     //上移
     $(document).on('click', '.up-shift', function() {
       const sortId = Number($(this).parents('.list-group-item').attr('data-sort'));
-      if(sortId <= 1) {
+      if(sortId < 2) {
         message('无法上移', 'danger');
       }else{
         loadResumeSortData[sortId] = loadResumeSortData.splice(sortId - 1, 1, loadResumeSortData[sortId])[0];
         publicResumeSortData = loadResumeSortData;
-        $('.resume-left').find('.sort').html('');
         eachResumeSortData();
       }
     })
@@ -818,12 +818,11 @@ $(document).ready(() => {
     //下移
     $(document).on('click', '.down-shift', function() {
       const sortId = Number($(this).parents('.list-group-item').attr('data-sort'));
-      if(sortId == 7) {
+      if(sortId == 7 || sortId == 0) {
         message('无法下移', 'danger');
       }else{
         loadResumeSortData[sortId] = loadResumeSortData.splice(sortId + 1, 1, loadResumeSortData[sortId])[0];
         publicResumeSortData = loadResumeSortData;
-        $('.resume-left').find('.sort').html('');
         eachResumeSortData();
       }
     })

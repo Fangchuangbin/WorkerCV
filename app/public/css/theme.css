@@ -114,9 +114,10 @@ a.text-lead:hover{color: #657ea4;}
 .more-button:hover{background: #8599b7;}
 .more-button:hover svg{color: #fff!important;}
 .accordion .dropdown-menu{min-width: auto!important;margin-right: 20px;}
-.sort .float-right a{display: none;cursor: pointer;}
-.sort li:hover a{display: inline-block;}
-.module .module-status{background: #e5ecf5;line-height: 16px;height: 21px;width: 21px;text-align: center;}
+.sort .float-right a{cursor: pointer;display: none;font-size: 14px;float: left;margin-left: 5px;}
+.sort .float-right a:hover{color: #000!important;}
+.sort li:hover a{display: block;}
+.module .module-status{background: #e5ecf5;line-height: 16px;height: 21px;width: 21px;text-align: center;float: left;}
 .module .module-status:hover{background: #c9d8ea;}
 
 /* 我的收藏 */
