@@ -2,28 +2,35 @@
 <script type="module" src="/js/edit_header.js"></script>
 <div class="bg-white w-100 py-2 px-3 edit-header header overflow-hidden">
   <div class="edit-left">
-    <a href="/resume" class="mr-2 px-1 float-left text-dark back-button rounded"><svg width="1.1em" height="1.1em" viewBox="0 2 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <a href="/resume" class="px-1 float-left text-dark back-button rounded"><svg width="1.1em" height="1.1em" viewBox="0 2 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
     </svg></a>
-    <p class="resume-name float-left font-size-15" contenteditable="true"></p>
-    
-    <div class="resume-more ml-3" title="更多">
-      <a href="javascript:void(0);" class="text-dark resume-more-button p-1 rounded" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="1.1em" height="1.1em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <p class="resume-name float-left font-size-15 ml-2" contenteditable="true"></p>
+    <div class="resume-more ml-4">
+      <a href="javascript:void(0);" class="text-body resume-more-button rounded float-left" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg width="1.1em" height="1.1em" viewBox="0 2 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
       </svg></a>
-      <div class="dropdown-menu font-size-14 border-lead mt-3" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item px-3 download-resume" href="#">下载</a>
+      <div class="dropdown-menu font-size-14 border-lead mt-2" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item px-3" href="#">打印</a>
         <a class="dropdown-item px-3" href="#">删除</a>
       </div>
+      <a href="javascript:void(0);" class="text-dark download-resume ml-3 pl-1 float-left"><svg width="1.2em" height="1.2em" viewBox="0 1 16 16" class="bi bi-cloud-arrow-down-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 6.854l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708z"/>
+      </svg></a>
+      <a href="javascript:void(0);" class="text-dark print-resume ml-4 float-left"><svg width="1em" height="1em" viewBox="0 1 16 16" class="bi bi-printer-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5z"/>
+        <path fill-rule="evenodd" d="M11 9H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+        <path fill-rule="evenodd" d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+      </svg></a>
+      <p class="resume-color ml-4 float-left border rounded"><input type="color"></p>
     </div>
     <p class="resume-save-tip float-left font-size-14 ml-3 font-weight-bold"></p>
   </div>
   <div class="edit-right float-right">
     <button type="button" class="btn btn-outline-dark font-size-13 py-0 float-left px-2" style="margin-top: 6px;">开通VIP</button>
-    <a href="" class="float-left ml-4 text-secondary font-size-17" style="margin-top: 2px"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
-      <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+    <a href="" class="float-left ml-4 text-dark font-size-17" style="margin-top: 1px"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H2z"/>
+      <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
     </svg></a>
     <a href="javascript:void(0);" class="float-left ml-4" id="dropdownUserBox" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://accounts.processon.com/uphoto/17/348/5f2cffffe401fd13e721d921.png" class="rounded-pill" alt="个人头像" width="35px" height="35px"></a>
     <div class="dropdown-menu mt-3 font-size-14 overflow-hidden mr-2 border-lead" style="min-width: 50px;" aria-labelledby="dropdownUserBox">

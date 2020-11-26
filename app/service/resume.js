@@ -61,6 +61,17 @@ class ResumeService extends Service {
     }
   }
 
+  //修改简历名称
+  async changCurrentResumeName(resumeData) {
+    const { ctx, app } = this;
+    const changCurrentResumeName = await app.mysql.update('workercv_resume', { resume_name: resumeData.resumeName }, { where: { resume_key: resumeData.resumeKey } })
+    if(changCurrentResumeName.affectedRows === 1) {
+      return { result: success }
+    }else{
+      return { result: fail }
+    }
+  }
+
 }
 
 module.exports = ResumeService;

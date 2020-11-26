@@ -41,7 +41,6 @@ class ResumeController extends Controller {
     const { ctx } = this;
     const currentResumeData = ctx.request.body;
     const getCurrentResume = await ctx.service.resume.getCurrentResume(currentResumeData);
-    console.log(getCurrentResume);
     ctx.body = getCurrentResume;
   }
 
@@ -59,6 +58,14 @@ class ResumeController extends Controller {
     const resumeData = ctx.request.body;
     const saveCurrentResume = await ctx.service.resume.saveCurrentResume(resumeData);
     ctx.body = saveCurrentResume;
+  }
+
+  //接口->修改简历名称
+  async changCurrentResumeName() {
+    const { ctx } = this;
+    const resumeData = ctx.request.body;
+    const changCurrentResumeName = await ctx.service.resume.changCurrentResumeName(resumeData);
+    ctx.body = changCurrentResumeName;
   }
 
 }

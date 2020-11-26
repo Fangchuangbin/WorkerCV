@@ -18,7 +18,7 @@
     <path fill-rule="evenodd" d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
   </svg><p class="text-dark mt-2 font-size-14">加载中</p></div>
   <div class="modal fade" id="renameModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="renameModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog mt-5">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title font-size-16" id="renameModalLabel">重命名</h5>
@@ -27,11 +27,11 @@
           </button>
         </div>
         <div class="modal-body">
-          <input type="text" class="form-control form-control-sm" placeholder="请输入的名字...">
+          <input type="text" class="form-control form-control-sm" placeholder="请输入模块名称...">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">取消</button>
-          <button type="button" class="btn btn-sm btn-primary save-rename">确定</button>
+          <button type="button" class="btn btn-sm btn-outline-dark" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-sm btn-dark save-rename-button">确定</button>
         </div>
       </div>
     </div>
@@ -39,9 +39,10 @@
   <div class="wrapper-plus edit overflow-hidden mt-3">
     <div class="resume-nav nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" id="v-pills-edit-tab" data-toggle="pill" href="#v-pills-edit" role="tab" aria-controls="v-pills-edit" aria-selected="true">编辑</a>
-      <a class="nav-link" id="v-pills-case-tab" data-toggle="pill" href="#v-pills-case" role="tab" aria-controls="v-pills-case" aria-selected="false">案例</a>
       <a class="nav-link" id="v-pills-layout-tab" data-toggle="pill" href="#v-pills-layout" role="tab" aria-controls="v-pills-layout" aria-selected="false">排序</a>
       <a class="nav-link" id="v-pills-module-tab" data-toggle="pill" href="#v-pills-module" role="tab" aria-controls="v-pills-module" aria-selected="false">模块</a>
+      <a class="nav-link" id="v-pills-case-tab" data-toggle="pill" href="#v-pills-case" role="tab" aria-controls="v-pills-case" aria-selected="false">案例</a>
+      <a class="nav-link" id="v-pills-case-tab" data-toggle="pill" href="#v-pills-template" role="tab" aria-controls="v-pills-case" aria-selected="false">模板</a>
     </div>
     <div class="float-left resume-left border border-lead bg-white rounded p-3">
       <div class="tab-content" id="v-pills-tabContent">
@@ -49,7 +50,6 @@
           <div class="accordion" id="accordionResumeContent">
           </div>
         </div>
-        <div class="tab-pane fade" id="v-pills-case" role="tabpanel" aria-labelledby="v-pills-case-tab"><h2>案例</h2></div>
         <div class="tab-pane fade" id="v-pills-layout" role="tabpanel" aria-labelledby="v-pills-layout-tab">
           <ul class="list-group sort"></ul>
         </div>
@@ -59,9 +59,11 @@
             <ul class="list-group module-on mt-2 pt-2"></ul>
             <h6 class="mt-3">已关闭</h6>
             <ul class="list-group module-off mt-2 pt-2"></ul>
-            <button type="button" class="btn btn-sm btn-dark mt-3 w-100">保存更改</button>
+            <button type="button" class="btn btn-sm btn-dark mt-3 w-100 save-switch-button">保存更改</button>
           </div>
         </div>
+        <div class="tab-pane fade" id="v-pills-case" role="tabpanel" aria-labelledby="v-pills-case-tab"><h2>案例</h2></div>
+        <div class="tab-pane fade" id="v-pills-template" role="tabpanel" aria-labelledby="v-pills-case-tab"><h2>模板</h2></div>
       </div>
       
     </div>

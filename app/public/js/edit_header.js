@@ -18,7 +18,10 @@ $(document).ready(() => {
     <div class="card border-lead basic">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading1" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">\
       <span class="resume-name"></span>\
-      </div>\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
+      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
+    </svg></a>\
       <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionResumeContent">\
         <div class="card-body p-3">\
           <p class="mb-1"><label for="realname" class="font-size-14">姓名</label><input type="text" class="form-control form-control-sm realname" autocomplete="off"></p>\
@@ -37,7 +40,10 @@ $(document).ready(() => {
     <div class="card border-lead intention">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading2" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">\
       <span class="resume-name"></span>\
-      </div>\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
+      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
+    </svg></a>\
       <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionResumeContent">\
         <div class="card-body p-3">\
           <p class="mb-1"><label for="position" class="font-size-14">岗位</label><input type="text" class="form-control form-control-sm position" autocomplete="off"></p>\
@@ -53,7 +59,10 @@ $(document).ready(() => {
     <div class="card border-lead education">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading3" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">\
       <span class="resume-name"></span>\
-      </div>\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
+      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
+    </svg></a>\
       <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionResumeContent">\
         <div class="card-body px-3 pb-3 pt-1">\
           <div class="education-box"></div>\
@@ -67,7 +76,10 @@ $(document).ready(() => {
     <div class="card border-lead work">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading4" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">\
       <span class="resume-name"></span>\
-      </div>\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
+      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
+    </svg></a>\
       <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionResumeContent">\
         <div class="card-body px-3 pb-3 pt-1">\
           <div class="work-box"></div>\
@@ -81,7 +93,10 @@ $(document).ready(() => {
     <div class="card border-lead appraise">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading5" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">\
       <span class="resume-name"></span>\
-      </div>\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
+      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
+    </svg></a>\
       <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionResumeContent">\
         <div class="card-body px-3 pb-3 pt-1">\
           <div class="appraise-box">\
@@ -96,7 +111,10 @@ $(document).ready(() => {
     <div class="card border-lead project">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading6" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">\
       <span class="resume-name"></span>\
-      </div>\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
+      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
+    </svg></a>\
       <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionResumeContent">\
         <div class="card-body px-3 pb-3 pt-1">\
           <div class="project-box"></div>\
@@ -110,7 +128,10 @@ $(document).ready(() => {
     <div class="card border-lead certificate">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading7" data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse7">\
       <span class="resume-name"></span>\
-      </div>\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
+      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
+    </svg></a>\
       <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordionResumeContent">\
         <div class="card-body px-3 pb-3 pt-1">\
           <div class="certificate-box">\
@@ -126,7 +147,10 @@ $(document).ready(() => {
     <div class="card border-lead association">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading8" data-toggle="collapse" data-target="#collapse8" aria-expanded="true" aria-controls="collapse8">\
       <span class="resume-name"></span>\
-      </div>\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
+      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
+    </svg></a>\
       <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordionResumeContent">\
         <div class="card-body resume-education-experience px-3 pb-3 pt-1">\
           <div class="association-box">\
@@ -156,7 +180,7 @@ $(document).ready(() => {
       success: ((response) => {
         if(response.result.code == 20000) {
           resumeData = response.getCurrentResume;
-          $('.edit-header').find('.resume-name').html('<span class="resume-name-save float-right font-size-13" contenteditable="false">保存</span>');
+          $('.edit-header').find('.resume-name').html('<span class="save-name-button float-right font-size-13" contenteditable="false">保存</span>');
           $('.edit-header').find('.resume-name').append('<span class="resume-name-main">' + resumeData.resume_name + '</span>');//渲染简历名称
           getCurrentResumeTemplate(status);//渲染数据模板
         }else{ message('未知错误，请刷新网页！', 'danger'); }
@@ -295,7 +319,7 @@ $(document).ready(() => {
       switch(n.module) {
         case 'basic'://基本信息
           if(n.status == 1) {
-            $('.resume-left .basic').attr('data-order', i);//模块顺序
+            $('.resume-left .basic').attr('data-sort', i);//模块顺序
             $('.resume-left .basic .resume-name').text(n.name);//模块名称
             //左
             $('.resume-left .basic .realname').val(n.data.realname);//姓名
@@ -304,7 +328,7 @@ $(document).ready(() => {
             $('.resume-left .basic .email').val(n.data.email);//电子邮箱
             $('.resume-left .basic .education').val(n.data.education);//最高学历
             $('.resume-left .basic .work-time').val(n.data.work_time);//工作时间
-            $('.resume-left .basic .introduce').text(n.data.introduce);//自我介绍
+            $('.resume-left .basic .introduce').text(n.data.introduce);//自我评价
             //右
             $('.resume-right .basic .realname').text(n.data.realname);//姓名
             $('.resume-right .basic .phone').text(n.data.phone);//手机号
@@ -312,13 +336,13 @@ $(document).ready(() => {
             $('.resume-right .basic .address').text(n.data.address);//地址
             $('.resume-right .basic .education').text(n.data.education);//学历
             $('.resume-right .basic .work-time').text(n.data.work_time);//工作实践
-            $('.resume-right .basic .introduce').text(n.data.introduce);//自我介绍
+            $('.resume-right .basic .introduce').text(n.data.introduce);//自我评价
             $('.resume-right .basic .avatar').attr('src', n.data.avatar);//个人头像
           }
           break;
         case 'intention'://求职意向
           if(n.status == 1) {
-            $('.resume-left .intention').attr('data-order', i);//模块顺序
+            $('.resume-left .intention').attr('data-sort', i);//模块顺序
             $('.resume-left .intention .resume-name').text(n.name);//模块名称
             //左
             $('.resume-left .intention .position').val(n.data.position);//姓名
@@ -335,7 +359,7 @@ $(document).ready(() => {
           break;
         case 'education'://教育经历
           if(n.status == 1) {
-            $('.resume-left .education').attr('data-order', i);//模块顺序
+            $('.resume-left .education').attr('data-sort', i);//模块顺序
             $('.resume-left .education .resume-name').text(n.name);//模块名称
             const educationData = n.data;
             var educationBox = '';
@@ -372,7 +396,7 @@ $(document).ready(() => {
           break;
         case 'work'://工作经历
           if(n.status == 1) {
-            $('.resume-left .work').attr('data-order', i);//模块顺序
+            $('.resume-left .work').attr('data-sort', i);//模块顺序
             $('.resume-left .work .resume-name').text(n.name);//模块名称
               const workData = n.data;
               var workBox = '';
@@ -407,7 +431,7 @@ $(document).ready(() => {
           break;
         case 'association'://社团经历
           if(n.status == 1) {
-            $('.resume-left .association').attr('data-order', i);//模块顺序
+            $('.resume-left .association').attr('data-sort', i);//模块顺序
             $('.resume-left .association .resume-name').text(n.name);//模块名称
             const associationData = n.data;
             var associationBox = '';
@@ -440,7 +464,7 @@ $(document).ready(() => {
           break;
         case 'project'://项目经历
           if(n.status == 1) {
-            $('.resume-left .project').attr('data-order', i);//模块顺序
+            $('.resume-left .project').attr('data-sort', i);//模块顺序
             $('.resume-left .project .resume-name').text(n.name);//模块名称
             const projectData = n.data;
             var projectBox = '';
@@ -473,7 +497,7 @@ $(document).ready(() => {
           break;
         case 'certificate'://技能证书
           if(n.status == 1) {
-            $('.resume-left .certificate').attr('data-order', i);//模块顺序
+            $('.resume-left .certificate').attr('data-sort', i);//模块顺序
             $('.resume-left .certificate .resume-name').text(n.name);//模块名称
             //左
             $('.resume-left .certificate .skill').text(n.data.skill);//技能
@@ -483,14 +507,14 @@ $(document).ready(() => {
             $('.resume-right .certificate .prove').text(n.data.prove);//证书
           }
           break;
-        case 'appraise'://自我介绍
+        case 'appraise'://自我评价
           if(n.status == 1) {
-            $('.resume-left .appraise').attr('data-order', i);//模块顺序
+            $('.resume-left .appraise').attr('data-sort', i);//模块顺序
             $('.resume-left .appraise .resume-name').text(n.name);//模块名称
             //左
-            $('.resume-left .appraise .introduce').text(n.data.introduce);//自我介绍
+            $('.resume-left .appraise .introduce').text(n.data.introduce);//自我评价
             //右
-            $('.resume-right .appraise .introduce').text(n.data.introduce);//自我介绍
+            $('.resume-right .appraise .introduce').text(n.data.introduce);//自我评价
           }
           break;
       }
@@ -548,8 +572,7 @@ $(document).ready(() => {
     //项目经历->添加模块
     $('.project .add-button').click(() => {
       var projectOrder = 1;//工作经历->序号
-      $('.resume-left').find('.project-box').each(function() { projectOrder = Number($(this).children('div').length + 1) });
-      projectOrder += 1;
+      $('.resume-left').find('.project-box').each(function() { projectOrder = Number($(this).children('div').length + 1); });
       var newProjectBoxMain = '';
       newProjectBoxMain += '<div class="project-box-main">';
       newProjectBoxMain += '<p class="my-2 pt-2 font-size-14 font-weight-bold"># NO.' + projectOrder + '<a href="javascript:void(0);" class="remove-button float-right font-size-13 font-weight-normal text-danger">删除模块</a></p>';
@@ -583,8 +606,8 @@ $(document).ready(() => {
     $('.accordion').find('.save-button').click(function() {
       var saveData;//保存数据
       var dataSort;//模块排序
-      if($(this).parents('.basic').attr('data-order')) {
-        dataSort = $(this).parents('.basic').attr('data-order');
+      if($(this).parents('.basic').attr('data-sort')) {
+        dataSort = $(this).parents('.basic').attr('data-sort');
         const realname = $('.resume-left .basic .realname').val();//姓名
         const phone = $('.resume-left .basic .phone').val();//手机
         const address = $('.resume-left .basic .address').val();//地址
@@ -594,15 +617,15 @@ $(document).ready(() => {
         const introduce = $('.resume-left .basic .introduce').val();//自我评价
         const avatar = 'http://image-workercv.test.upcdn.net/009862297f62849aefef6a6687a71c7d.jpg';//个人头像
         saveData = { realname, phone, address, email, education, work_time, introduce, avatar }
-      }else if($(this).parents('.intention').attr('data-order')) { //求职意向
-        dataSort = $(this).parents('.intention').attr('data-order');
+      }else if($(this).parents('.intention').attr('data-sort')) { //求职意向
+        dataSort = $(this).parents('.intention').attr('data-sort');
         const position = $('.resume-left .intention .position').val();//职位
         const city = $('.resume-left .intention .city').val();//城市
         const salary = $('.resume-left .intention .salary').val();//薪资
         const arrive_time = $('.resume-left .intention .arrive-time').val();//到岗时间
         saveData = { position, city, salary, arrive_time }
-      }else if($(this).parents('.education').attr('data-order')) {
-        dataSort = $(this).parents('.education').attr('data-order');
+      }else if($(this).parents('.education').attr('data-sort')) {
+        dataSort = $(this).parents('.education').attr('data-sort');
         var educationArray = [];//教育经历->全部数组
         $('.resume-left').find('.education-box-main').each(function(i) {
           var educationObject = {};//教育经历->单个对象
@@ -616,8 +639,8 @@ $(document).ready(() => {
           educationArray.push(educationObject);
           saveData = educationArray;
         })
-      }else if($(this).parents('.work').attr('data-order')) {
-        dataSort = $(this).parents('.work').attr('data-order');
+      }else if($(this).parents('.work').attr('data-sort')) {
+        dataSort = $(this).parents('.work').attr('data-sort');
         var workArray = [];//工作经历->全部数组
         $('.resume-left').find('.work-box-main').each(function(i) {
           var workObject = {};//工作经历->单个对象
@@ -629,8 +652,8 @@ $(document).ready(() => {
           workArray.push(workObject);
           saveData = workArray;
         })
-      }else if($(this).parents('.project').attr('data-order')) {
-        dataSort = $(this).parents('.project').attr('data-order');
+      }else if($(this).parents('.project').attr('data-sort')) {
+        dataSort = $(this).parents('.project').attr('data-sort');
         var projectArray = [];//项目经历->全部数组
         $('.resume-left').find('.project-box-main').each(function(i) {
           var projectObject = {};//项目经历->单个对象
@@ -641,8 +664,8 @@ $(document).ready(() => {
           projectArray.push(projectObject);
           saveData = projectArray;
         })
-      }else if($(this).parents('.association').attr('data-order')) {
-        dataSort = $(this).parents('.association').attr('data-order');
+      }else if($(this).parents('.association').attr('data-sort')) {
+        dataSort = $(this).parents('.association').attr('data-sort');
         var associationArray = [];//社团经历->全部数组
         $('.resume-left').find('.association-box-main').each(function(i) {
           var associationObject = {};//社团经历->单个对象
@@ -653,15 +676,15 @@ $(document).ready(() => {
           associationArray.push(associationObject);
           saveData = associationArray;
         })
-      }else if($(this).parents('.certificate').attr('data-order')) {
-        dataSort = $(this).parents('.certificate').attr('data-order');
+      }else if($(this).parents('.certificate').attr('data-sort')) {
+        dataSort = $(this).parents('.certificate').attr('data-sort');
         $('.resume-left').find('.certificate-box').each(function(i) {
           const skill = $('.resume-left .certificate .skill').val();//技能
           const prove = $('.resume-left .certificate .prove').val();//证书
           saveData = { skill, prove }
         })
-      }else if($(this).parents('.appraise').attr('data-order')) {
-        dataSort = $(this).parents('.appraise').attr('data-order');
+      }else if($(this).parents('.appraise').attr('data-sort')) {
+        dataSort = $(this).parents('.appraise').attr('data-sort');
         $('.resume-left').find('.appraise-box').each(function(i) {
           const introduce = $('.resume-left .appraise .introduce').val();//自我评价
           saveData = { introduce }
@@ -682,6 +705,20 @@ $(document).ready(() => {
       })
     })
 
+    //保存简历名称
+    $(document).on('click', '.save-name-button', function() {
+      const resumeName = $('.resume-name-main').text();//新数据
+      $.ajax({
+        url: baseURL + '/changCurrentResumeName',
+        type: 'post',
+        dataType: 'json',
+        timeout: 5000,
+        headers: { 'x-csrf-token': $.cookie('csrfToken') },
+        data: { resumeKey, resumeName: resumeName },
+        success: ((response) => { message('已保存', 'success'); }),
+        error: ((error) => { message('保存失败', 'danger'); return false; })
+      })
+    })
   };
 
   //排序->渲染模块
@@ -698,10 +735,10 @@ $(document).ready(() => {
             if(n.status == 1) {
               $('.resume-left').find('.sort').append('\
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
-                  <span class="resume-module-name font-size-14 float-left">基本信息</span>\
+                  <span class="resume-module-name font-size-14 float-left">#'+ Number(i+1) +' - 基本信息</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -711,10 +748,10 @@ $(document).ready(() => {
             if(n.status == 1) {
               $('.resume-left').find('.sort').append('\
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
-                  <span class="resume-module-name font-size-14 float-left">求职意向</span>\
+                  <span class="resume-module-name font-size-14 float-left">#'+ Number(i+1) +' - 求职意向</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -724,10 +761,10 @@ $(document).ready(() => {
             if(n.status == 1) {
               $('.resume-left').find('.sort').append('\
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
-                  <span class="resume-module-name font-size-14 float-left">教育经历</span>\
+                  <span class="resume-module-name font-size-14 float-left">#'+ Number(i+1) +' - 教育经历</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -737,10 +774,10 @@ $(document).ready(() => {
             if(n.status == 1) {
               $('.resume-left').find('.sort').append('\
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
-                  <span class="resume-module-name font-size-14 float-left">工作经历</span>\
+                  <span class="resume-module-name font-size-14 float-left">#'+ Number(i+1) +' - 工作经历</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -750,10 +787,10 @@ $(document).ready(() => {
             if(n.status == 1) {
               $('.resume-left').find('.sort').append('\
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
-                  <span class="resume-module-name font-size-14 float-left">项目经历</span>\
+                  <span class="resume-module-name font-size-14 float-left">#'+ Number(i+1) +' - 项目经历</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -763,10 +800,10 @@ $(document).ready(() => {
             if(n.status == 1) {
               $('.resume-left').find('.sort').append('\
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
-                  <span class="resume-module-name font-size-14 float-left">社团经历</span>\
+                  <span class="resume-module-name font-size-14 float-left">#'+ Number(i+1) +' - 社团经历</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -776,23 +813,23 @@ $(document).ready(() => {
             if(n.status == 1) {
               $('.resume-left').find('.sort').append('\
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
-                  <span class="resume-module-name font-size-14 float-left">技能证书</span>\
+                  <span class="resume-module-name font-size-14 float-left">#'+ Number(i+1) +' - 技能证书</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
             }
           break;
-          case "appraise"://自我介绍
+          case "appraise"://自我评价
             if(n.status == 1) {
               $('.resume-left').find('.sort').append('\
                 <li class="list-group-item list-group-item-action" data-sort="' + i +'">\
-                  <span class="resume-module-name font-size-14 float-left">自我介绍</span>\
+                  <span class="resume-module-name font-size-14 float-left">#'+ Number(i+1) +' - 自我评价</span>\
                   <span class="float-right font-size-14">\
-                    <a href="javascript:void(0);" class="text-black-50 up-shift">上移</a>\
-                    <a href="javascript:void(0);" class="text-black-50 down-shift">下移</a>\
+                    <a href="javascript:void(0);" class="text-danger up-shift">上移</a>\
+                    <a href="javascript:void(0);" class="text-primary down-shift">下移</a>\
                   </span>\
                 </li>\
               ')
@@ -802,6 +839,26 @@ $(document).ready(() => {
       })
       $('.resume-left').find('.sort').append('\<button type="button" class="btn btn-sm btn-dark mt-3 save-sort-button">保存更改</button>');
     }
+
+    //模块重命名
+    $(document).on('click', '.rename-button', function() {
+      $('#renameModal').modal('show');
+      const sortId = $(this).parents('.card').attr('data-sort');
+      $('#renameModal').find('.form-control').val(loadResumeSortData[sortId].name);
+      $(document).on('click', '.save-rename-button', function() {
+        loadResumeSortData[sortId].name = $('#renameModal').find('.form-control').val();
+        $.ajax({
+          url: baseURL + '/saveCurrentResume',
+          type: 'post',
+          dataType: 'json',
+          timeout: 5000,
+          headers: { 'x-csrf-token': $.cookie('csrfToken') },
+          data: { resumeKey, saveResumeData: loadResumeSortData },
+          success: ((response) => { getCurrentResume(1); message('已保存', 'success'); $('#renameModal').modal('hide'); }),
+          error: ((error) => { message('保存失败', 'danger'); return false; })
+        })
+      })
+    })
     
     //上移
     $(document).on('click', '.up-shift', function() {
@@ -828,7 +885,7 @@ $(document).ready(() => {
     })
 
     //保存排序
-    $(document).on('click', '.sort .save-sort-button', function() {
+  $(document).on('click', '.sort .save-sort-button', function() {
       $.ajax({
         url: baseURL + '/saveCurrentResume',
         type: 'post',
@@ -844,21 +901,21 @@ $(document).ready(() => {
 
   //模块->模块开关
   function renderCurrentResumeModule() {
-    var publicResumeModuleData;
     $('.resume-left').find('.module').find('.module-on').html('');
     $('.resume-left').find('.module').find('.module-off').html('');
     var loadResumeModuleData = JSON.parse(resumeData.resume_data);
     eachModuleOnData();//已开启的模块
     function eachModuleOnData() {
+      $('.resume-left').find('.module-on').html('');
       $.each(loadResumeModuleData, function(i, n) {
         switch(n.module) {
           case "basic":
             if(n.status == 1) {
               $('.resume-left').find('.module-on').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">基本信息</span>\
                 <span class="float-right font-size-20">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-off">-</a>\
                 </span>\
               </li>')
             }
@@ -866,10 +923,10 @@ $(document).ready(() => {
           case "intention":
             if(n.status == 1) {
               $('.resume-left').find('.module-on').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">求职意向</span>\
                 <span class="float-right font-size-20">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-off">-</a>\
                 </span>\
               </li>')
             }
@@ -877,10 +934,10 @@ $(document).ready(() => {
           case "education":
             if(n.status == 1) {
               $('.resume-left').find('.module-on').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">教育经历</span>\
                 <span class="float-right font-size-20">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-off">-</a>\
                 </span>\
               </li>')
             }
@@ -888,10 +945,10 @@ $(document).ready(() => {
           case "work":
             if(n.status == 1) {
               $('.resume-left').find('.module-on').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">工作经历</span>\
                 <span class="float-right font-size-20">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-off">-</a>\
                 </span>\
               </li>')
             }
@@ -899,10 +956,10 @@ $(document).ready(() => {
           case "project":
             if(n.status == 1) {
               $('.resume-left').find('.module-on').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">项目经历</span>\
                 <span class="float-right font-size-20">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-off">-</a>\
                 </span>\
               </li>')
             }
@@ -910,10 +967,10 @@ $(document).ready(() => {
           case "association":
             if(n.status == 1) {
               $('.resume-left').find('.module-on').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">社团经历</span>\
                 <span class="float-right font-size-20">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-off">-</a>\
                 </span>\
               </li>')
             }
@@ -921,10 +978,10 @@ $(document).ready(() => {
           case "certificate":
             if(n.status == 1) {
               $('.resume-left').find('.module-on').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">技能证书</span>\
                 <span class="float-right font-size-20">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-off">-</a>\
                 </span>\
               </li>')
             }
@@ -932,10 +989,10 @@ $(document).ready(() => {
           case "appraise":
             if(n.status == 1) {
               $('.resume-left').find('.module-on').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
-                <span class="module-name font-size-14 float-left">自我介绍</span>\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
+                <span class="module-name font-size-14 float-left">自我评价</span>\
                 <span class="float-right font-size-20">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">-</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-off">-</a>\
                 </span>\
               </li>')
             }
@@ -946,97 +1003,82 @@ $(document).ready(() => {
         $('.resume-left').find('.module-on').html('<span class="text-secondary font-size-14 text-center">全部已关闭</span>')
       }
     }
-    eachModuleoffData();//已开启的模块
+    eachModuleoffData();//已关闭的模块
     function eachModuleoffData() {
-      $.each(loadResumeModuleData, function(i, n) {
+      $('.resume-left').find('.module-off').html('');
+      $.each(loadResumeModuleData.filter(n => n.status == 0), function(i, n) {
         switch(n.module) {
           case "basic":
-            if(n.status == 0) {
               $('.resume-left').find('.module-off').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">基本信息</span>\
                 <span class="float-right font-size-16">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-on">+</a>\
                 </span>\
               </li>')
-            }
           break;
           case "intention":
-            if(n.status == 0) {
               $('.resume-left').find('.module-off').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">求职意向</span>\
                 <span class="float-right font-size-16">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-on">+</a>\
                 </span>\
               </li>')
-            }
           break;
           case "education":
-            if(n.status == 0) {
               $('.resume-left').find('.module-off').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">教育经历</span>\
                 <span class="float-right font-size-16">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-on">+</a>\
                 </span>\
               </li>')
-            }
           break;
           case "work":
-            if(n.status == 0) {
               $('.resume-left').find('.module-off').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">工作经历</span>\
                 <span class="float-right font-size-16">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-on">+</a>\
                 </span>\
               </li>')
-            }
           break;
           case "project":
-            if(n.status == 0) {
               $('.resume-left').find('.module-off').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">项目经历</span>\
                 <span class="float-right font-size-16">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-on">+</a>\
                 </span>\
               </li>')
-            }
           break;
           case "association":
-            if(n.status == 0) {
               $('.resume-left').find('.module-off').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">社团经历</span>\
                 <span class="float-right font-size-16">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-on">+</a>\
                 </span>\
               </li>')
-            }
           break;
           case "certificate":
-            if(n.status == 0) {
               $('.resume-left').find('.module-off').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
                 <span class="module-name font-size-14 float-left">技能证书</span>\
                 <span class="float-right font-size-16">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-on">+</a>\
                 </span>\
               </li>')
-            }
           break;
           case "appraise":
-            if(n.status == 0) {
               $('.resume-left').find('.module-off').append('\
-                <li class="list-group-item list-group-item-active" data-status="' + i + '">\
-                <span class="module-name font-size-14 float-left">自我介绍</span>\
+                <li class="list-group-item list-group-item-active" data-module="' + n.module + '">\
+                <span class="module-name font-size-14 float-left">自我评价</span>\
                 <span class="float-right font-size-16">\
-                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded">+</a>\
+                  <a href="javascript:void(0);" class="module-status float-right text-dark rounded module-come-on">+</a>\
                 </span>\
               </li>')
-            }
           break;
         }
       })
@@ -1044,6 +1086,46 @@ $(document).ready(() => {
         $('.resume-left').find('.module-off').html('<span class="text-secondary font-size-14 text-center">全部已开启</span>')
       }
     }
+    ModuleSwitch();//模块开关
+    function ModuleSwitch() {
+      //开启模块
+      $(document).on('click', '.module-come-on', function() {
+        const moduleName = $(this).parents('.list-group-item').attr('data-module');
+        for(var i = 0; i < loadResumeModuleData.length; i++) {
+          if(loadResumeModuleData[i].module == moduleName && loadResumeModuleData[i].status == 0) {
+            loadResumeModuleData[i].status = "1";
+            eachModuleOnData();//已开启的模块
+            eachModuleoffData();//已关闭的模块
+          }
+        }
+      })
+
+      //关闭模块
+      $(document).on('click', '.module-come-off', function() {
+        const moduleName = $(this).parents('.list-group-item').attr('data-module');
+        for(var i = 0; i < loadResumeModuleData.length; i++) {
+          if(loadResumeModuleData[i].module == moduleName && loadResumeModuleData[i].status == 1) {
+            loadResumeModuleData[i].status = "0";
+            eachModuleOnData();//已开启的模块
+            eachModuleoffData();//已关闭的模块
+          }
+        }
+      })
+    }
+
+    //保存开关
+    $(document).on('click', '.save-switch-button', function() {
+      $.ajax({
+        url: baseURL + '/saveCurrentResume',
+        type: 'post',
+        dataType: 'json',
+        timeout: 5000,
+        headers: { 'x-csrf-token': $.cookie('csrfToken') },
+        data: { resumeKey, saveResumeData: loadResumeModuleData },
+        success: ((response) => { getCurrentResume(); message('已保存', 'success'); }),
+        error: ((error) => { message('保存失败', 'danger'); return false; })
+      })
+    })
   }
 
   //退出登录
@@ -1065,4 +1147,7 @@ $(document).ready(() => {
     })
   })
 
+  $('.print-resume').click(() => {
+    alert("敬请期待...")
+  })
 })
