@@ -18,7 +18,7 @@ $(document).ready(() => {
     <div class="card border-lead basic">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading1" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">\
       <span class="resume-name"></span>\
-      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.9em" height="0.9em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
     </svg></a>\
@@ -40,7 +40,7 @@ $(document).ready(() => {
     <div class="card border-lead intention">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading2" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">\
       <span class="resume-name"></span>\
-      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.9em" height="0.9em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
     </svg></a>\
@@ -59,7 +59,7 @@ $(document).ready(() => {
     <div class="card border-lead education">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading3" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">\
       <span class="resume-name"></span>\
-      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.9em" height="0.9em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
     </svg></a>\
@@ -76,7 +76,7 @@ $(document).ready(() => {
     <div class="card border-lead work">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading4" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">\
       <span class="resume-name"></span>\
-      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.9em" height="0.9em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
     </svg></a>\
@@ -93,7 +93,7 @@ $(document).ready(() => {
     <div class="card border-lead appraise">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading5" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">\
       <span class="resume-name"></span>\
-      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.9em" height="0.9em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
     </svg></a>\
@@ -111,7 +111,7 @@ $(document).ready(() => {
     <div class="card border-lead project">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading6" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">\
       <span class="resume-name"></span>\
-      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.9em" height="0.9em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
     </svg></a>\
@@ -128,7 +128,7 @@ $(document).ready(() => {
     <div class="card border-lead certificate">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading7" data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse7">\
       <span class="resume-name"></span>\
-      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.9em" height="0.9em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
     </svg></a>\
@@ -147,7 +147,7 @@ $(document).ready(() => {
     <div class="card border-lead association">\
       <div class="card-header font-size-14 bg-lead border-lead" id="heading8" data-toggle="collapse" data-target="#collapse8" aria-expanded="true" aria-controls="collapse8">\
       <span class="resume-name"></span>\
-      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+      </div><a href="javascript:void(0);" class="rename-button text-dark"><svg width="0.9em" height="0.9em" viewBox="0 0 16 16" class="bi bi-pencil-square mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>\
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>\
     </svg></a>\
@@ -180,8 +180,8 @@ $(document).ready(() => {
       success: ((response) => {
         if(response.result.code == 20000) {
           resumeData = response.getCurrentResume;
-          $('.edit-header').find('.resume-name').html('<span class="save-name-button float-right font-size-13" contenteditable="false">保存</span>');
-          $('.edit-header').find('.resume-name').append('<span class="resume-name-main">' + resumeData.resume_name + '</span>');//渲染简历名称
+          $('.edit-header').find('.resume-name').html('<span class="save-name-button float-right font-size-13">保存</span>');
+          $('.edit-header').find('.resume-name').append('<span class="resume-name-main" contenteditable="true">' + resumeData.resume_name + '</span>');//渲染简历名称
           getCurrentResumeTemplate(status);//渲染数据模板
         }else{ message('未知错误，请刷新网页！', 'danger'); }
       }),
@@ -384,7 +384,7 @@ $(document).ready(() => {
               educationBox += '<p style="width: 50%;float: left;"><span class="school" style="font-weight: bold;">' + n.school + '</span></p>';
               educationBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
               educationBox += '</div>';
-              educationBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
+              educationBox += '<div style="font-size: 13px;overflow: hidden;">';
               educationBox += '<p style="width: 50%;float: left;"><span class="department">' + n.department + ' ' + n.level + ' ' + n.major + '</span></p>';
               educationBox += '<p style="width: 50%;float: right;text-align: right;"><span class="city">' + n.city + '</span></p>';
               educationBox += '</div>';
@@ -419,7 +419,7 @@ $(document).ready(() => {
                 workBox += '<p style="width: 50%;float: left;"><span class="company" style="font-weight: bold;">' + n.company + '</span></p>';
                 workBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
                 workBox += '</div>';
-                workBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
+                workBox += '<div style="font-size: 13px;overflow: hidden;">';
                 workBox += '<p style="width: 50%;float: left;"><span class="position">' + n.position + '</span></p>';
                 workBox += '<p style="width: 50%;float: right;text-align: right;"><span class="city">' + n.city + '</span></p>';
                 workBox += '</div>';
@@ -453,7 +453,7 @@ $(document).ready(() => {
               associationBox += '<p style="width: 50%;float: left;"><span class="association" style="font-weight: bold;">' + n.association + '</span></p>';
               associationBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
               associationBox += '</div>';
-              associationBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
+              associationBox += '<div style="font-size: 13px;overflow: hidden;">';
               associationBox += '<p style="width: 50%;float: left;"><span class="position">' + n.position + '</span></p>';
               associationBox += '</div>';
               associationBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
@@ -486,7 +486,7 @@ $(document).ready(() => {
               projectBox += '<p style="width: 50%;float: left;"><span class="project" style="font-weight: bold;">' + n.project + '</span></p>';
               projectBox += '<p style="width: 50%;float: right;text-align: right;"><span class="time">' + n.time + '</span></p>';
               projectBox += '</div>';
-              projectBox += '<div style="font-size: 13px;overflow: hidden;height: 15px;line-height: 15px;">';
+              projectBox += '<div style="font-size: 13px;overflow: hidden;">';
               projectBox += '<p style="width: 50%;float: left;"><span class="position">' + n.position + '</span></p>';
               projectBox += '</div>';
               projectBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
@@ -705,11 +705,24 @@ $(document).ready(() => {
       })
     })
 
+    //激活修改简历名称
+    $(document).on('click', '.resume-name-current-button', function(e) {
+      $(this).addClass('resume-name-current')
+      $(document).one('click', function() {
+        if($('.resume-name-current').find('.resume-name-main').text() == '') {
+          message('请输入简历名称','danger');
+        }else{
+          $('.resume-name-current-button').removeClass('resume-name-current')
+        }
+      })
+      e.stopPropagation();
+    })
+    
     //保存简历名称
     $(document).on('click', '.save-name-button', function() {
       const resumeName = $('.resume-name-main').text();//新数据
       $.ajax({
-        url: baseURL + '/changCurrentResumeName',
+        url: baseURL + '/changeCurrentResumeName',
         type: 'post',
         dataType: 'json',
         timeout: 5000,
@@ -719,13 +732,52 @@ $(document).ready(() => {
         error: ((error) => { message('保存失败', 'danger'); return false; })
       })
     })
+ 
+    //保存简历配置
+    $(document).on('click', '.save-config-button', function() {
+      const color = $('.resume-color').find('input').val();//颜色
+      const font = $('.resume-font').find('select').val();//字体
+      const size = $('.resume-size').find('select').val();//字号
+      const line = $('.resume-line').find('select').val();//行距
+      const padding = $('.resume-padding').find('select').val();//边距
+      const saveResumeConfigData = {"color": color, "font": font, "size": size, "line": line, "padding": padding};
+      $.ajax({
+        url: baseURL + '/changeCurrentResumeConfig',
+        type: 'post',
+        dataType: 'json',
+        timeout: 5000,
+        headers: { 'x-csrf-token': $.cookie('csrfToken') },
+        data: { resumeKey, resumeConfig: saveResumeConfigData },
+        success: ((response) => { message('已保存', 'success'); getCurrentResume(); }),
+        error: ((error) => { message('保存失败', 'danger'); return false; })
+      })
+    })
+  
+    //获取简历配置
+    getCurrentResumeConfig();
+    function getCurrentResumeConfig() {
+      const resumeConfigData = JSON.parse(resumeData.resume_config);
+      $('.resume-color').find('input').val(resumeConfigData.color);
+      $('.resume-font').find('select').val(resumeConfigData.font);//字体
+      $('.resume-size').find('select').val(resumeConfigData.size);//字号
+      $('.resume-line').find('select').val(resumeConfigData.line);//行距
+      $('.resume-padding').find('select').val(resumeConfigData.padding);//边距
+      $('.resume-box').css('padding', resumeConfigData.padding);
+      $('.resume-box').css('line-height', resumeConfigData.line);
+      $('.resume-box').find('span').css('font-size', resumeConfigData.size);
+      $('.resume-box').find('.content').css('font-size', resumeConfigData.size);
+      $('.resume-box').find('h6').css('font-size', resumeConfigData.size);
+      $('.resume-box').find('p').css('font-size', resumeConfigData.size);
+      $('.resume-box').find('h6').css('color', resumeConfigData.color);
+      $('.resume-box').find('h6').css('border-color', resumeConfigData.color);
+    }
   };
 
   //排序->渲染模块
   function renderCurrentResumeSort() {
     var publicResumeSortData;
     $('.resume-left').find('.sort').html('');
-    var loadResumeSortData = JSON.parse(resumeData.resume_data);
+    const loadResumeSortData = JSON.parse(resumeData.resume_data);
     eachResumeSortData();//遍历模块排序
     function eachResumeSortData() {
       $('.resume-left').find('.sort').html('');
@@ -885,19 +937,19 @@ $(document).ready(() => {
     })
 
     //保存排序
-  $(document).on('click', '.sort .save-sort-button', function() {
-      $.ajax({
-        url: baseURL + '/saveCurrentResume',
-        type: 'post',
-        dataType: 'json',
-        timeout: 5000,
-        headers: { 'x-csrf-token': $.cookie('csrfToken') },
-        data: { resumeKey, saveResumeData: publicResumeSortData },
-        success: ((response) => { getCurrentResume(); message('已保存', 'success'); }),
-        error: ((error) => { message('保存失败', 'danger'); return false; })
+    $(document).on('click', '.sort .save-sort-button', function() {
+        $.ajax({
+          url: baseURL + '/saveCurrentResume',
+          type: 'post',
+          dataType: 'json',
+          timeout: 5000,
+          headers: { 'x-csrf-token': $.cookie('csrfToken') },
+          data: { resumeKey, saveResumeData: publicResumeSortData },
+          success: ((response) => { getCurrentResume(); message('已保存', 'success'); }),
+          error: ((error) => { message('保存失败', 'danger'); return false; })
+        })
       })
-    })
-  }
+    }
 
   //模块->模块开关
   function renderCurrentResumeModule() {
@@ -1113,7 +1165,7 @@ $(document).ready(() => {
       })
     }
 
-    //保存开关
+    //保存模块开关
     $(document).on('click', '.save-switch-button', function() {
       $.ajax({
         url: baseURL + '/saveCurrentResume',
@@ -1141,7 +1193,7 @@ $(document).ready(() => {
       dataType: 'json',
       timeout: 5000,
       headers: { 'x-csrf-token': $.cookie('csrfToken') },
-      data: { resumeCode: $('.resume-right .rounded').html() },
+      data: { resumeCode: $('.resume-right .rounded').html(), resumeName: resumeData.resume_name },
       success: ((response) => { message('下载成功', 'success') }),
       error: ((error) => { console.log(error) })
     })
@@ -1150,4 +1202,15 @@ $(document).ready(() => {
   $('.print-resume').click(() => {
     alert("敬请期待...")
   })
+
+
+  //提示框
+  $('.resume-more').find('svg').tooltip();
+  $('.download-resume').tooltip();
+  $('.print-resume').tooltip();
+  $('#colorFormControlSelect').tooltip();
+  $('#fontFormControlSelect').tooltip();
+  $('#lineFormControlSelect').tooltip();
+  $('#sizeFormControlSelect').tooltip();
+  $('#paddingFormControlSelect').tooltip();
 })

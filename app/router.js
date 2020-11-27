@@ -20,5 +20,7 @@ module.exports = app => {
   router.post('/getCurrentResume', token, controller.resume.getCurrentResume);//获取当前简历所属模板
   router.post('/getCurrentResumeTemplate', token, controller.resume.getCurrentResumeTemplate);//获取当前简历所属模板
   router.post('/saveCurrentResume', token, controller.resume.saveCurrentResume);//保存内容
-  router.post('/changCurrentResumeName', token, controller.resume.changCurrentResumeName);//修改简历名称
+  router.post('/changeCurrentResumeName', token, controller.resume.changeCurrentResumeName);//修改简历名称
+  router.post('/changeCurrentResumeConfig', token, controller.resume.changeCurrentResumeConfig);//修改简历配置
+  router.post('/createResume', token, controller.resume.createResume);//创建简历
 };

@@ -13,6 +13,7 @@ class ResumeController extends Controller {
     var getResumeList = await ctx.service.resume.getResumeList(loginToken);//我的简历
     await ctx.render('resume/index', {
       getResumeList: getResumeList.getResumeList,//我的简历
+      userId: getResumeList.getUser.id,//用户信息
     });
   }
 
@@ -61,11 +62,27 @@ class ResumeController extends Controller {
   }
 
   //接口->修改简历名称
-  async changCurrentResumeName() {
+  async changeCurrentResumeName() {
     const { ctx } = this;
     const resumeData = ctx.request.body;
-    const changCurrentResumeName = await ctx.service.resume.changCurrentResumeName(resumeData);
-    ctx.body = changCurrentResumeName;
+    const changeCurrentResumeName = await ctx.service.resume.changeCurrentResumeName(resumeData);
+    ctx.body = changeCurrentResumeName;
+  }
+
+  //接口->修改简历配置
+  async changeCurrentResumeConfig() {
+    const { ctx } = this;
+    const resumeData = ctx.request.body;
+    const changeCurrentResumeConfig = await ctx.service.resume.changeCurrentResumeConfig(resumeData);
+    ctx.body = changeCurrentResumeConfig;
+  }
+
+  //接口->新建简历
+  async createResume() {
+    const { ctx } = this;
+    const resumeData = ctx.request.body;
+    const createResume = await ctx.service.resume.createResume(resumeData);
+    ctx.body = createResume;
   }
 
 }

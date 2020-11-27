@@ -91,19 +91,30 @@ a.text-lead:hover{color: #657ea4;}
 .edit-header{height: 51px;border-bottom: 1px solid #e5ecf5;}
 .edit-header .back-button{line-height: 35px;}
 .edit-header .back-button:hover{background: #e5ecf5;}
-.edit-header .resume-name{height: 34px;line-height: 34px;border-bottom: 1px solid #fff;transition: 0.3s;min-width: 150px;max-width: 250px;overflow: hidden;}
+.edit-header .resume-name{height: 34px;line-height: 34px;border-bottom: 1px solid #fff;outline: none;transition: 0.3s;overflow: hidden;}
 .edit-header .resume-name:hover{border-color: #e5ecf5;}
-.edit-header .resume-name:focus{border-color: #e5ecf5;min-width: 220px;}
-.edit-header .resume-name:focus .save-name-button{width: 46px;padding: 0px 10px;margin-left: 10px;}
+.edit-header .resume-name .resume-name-main{height: 34px;line-height: 36px;display: inline-block;padding-right: 5px;max-width: 190px;overflow: hidden;}
+.edit-header .resume-name-current{border-color: #e5ecf5;}
+.edit-header .resume-name-current .resume-name-main{min-width: 70px;}
+.edit-header .resume-name-current .save-name-button{width: 46px;padding: 0px 10px;margin-left: 10px;}
 .edit-header .save-name-button{height: 24px;line-height: 24px;width: 0;margin: 5px 0;padding: 0;transition: 0.3s;overflow: hidden;background: #e5ecf5;margin-left: 0px;border-radius: 4px;cursor: pointer;}
 .edit-header .save-name-button:hover{background: #c9d8ea;}
-.edit-header .resume-more{line-height: 35px;float: left;height: 35px;}
-.edit-header .resume-more-button{padding: 0px 5px;}
+.edit-header .resume-more{line-height: 25px;float: left;height: 25px;margin: 4.5px 0;}
+.edit-header .resume-more-button{padding: 0px 3px;}
 .edit-header .resume-more-button:hover{background-color: #e5ecf5;}
 .edit-header .resume-more .dropdown-menu{min-width: 60px;}
 .edit-header .resume-more .dropdown-item{line-height: 21px;}
-.edit-header .resume-color{height: 22px;margin: 7px 0;width: 22px;}
-.edit-header .resume-color input{width: 20px;height: 20px;padding: 2px;margin: 0!important;outline: none;cursor: pointer;border: 0;float: left;}
+.edit-header .resume-color{height: 20px;margin: 3px 0;width: 20px;}
+.edit-header .resume-color input{width: 18px;height: 18px;padding: 1px!important;margin: 0!important;outline: none;cursor: pointer;border: 0;float: left;}
+.edit-header .resume-font{height: 21px;margin: 2px 0;}
+.edit-header .resume-font select{height: 21px;padding: 0 3px;cursor: pointer;}
+.edit-header .resume-size{height: 21px;margin: 2px 0;}
+.edit-header .resume-size select{height: 21px;padding: 0 3px;cursor: pointer;}
+.edit-header .resume-line{height: 21px;margin: 2px 0;}
+.edit-header .resume-line select{height: 21px;padding: 0 5px;cursor: pointer;}
+.edit-header .resume-padding{height: 21px;margin: 2px 0;}
+.edit-header .resume-padding select{height: 21px;padding: 0 3px;cursor: pointer;}
+.save-config-button{height: 20px;padding: 0px 8px;margin-top: -5px;}
 .resume-left{border-radius: 0px 4px 4px 4px!important;position: absolute;height: 90%;overflow-y: scroll;width: 290px;}
 .resume-left .card{position: static;}
 .resume-left .card-header{cursor: pointer;}
@@ -124,7 +135,15 @@ a.text-lead:hover{color: #657ea4;}
 .sort li:hover a{display: inline;}
 .module .module-status{background: #e5ecf5;line-height: 16px;height: 21px;width: 21px;text-align: center;float: left;}
 .module .module-status:hover{background: #c9d8ea;}
-.rename-button{position: absolute;z-index: 1111;right: 35px;height: 46px;}
+.rename-button{position: absolute;z-index: 1111;right: 35px;height: 46px;display: none;}
+.accordion .card:hover .rename-button{display: block;}
+.resume-box{height: 1155px;}
+.create-resume-template-list li{height: 266px;overflow: hidden;}
+.create-resume-template-list li .bi-check2-square{position: relative;margin-left: -125px;opacity: 0;transition: 0.3s;}
+.create-resume-template-list img{height: 266px;transition: 0.3s;}
+.create-resume-template-list a{display: block;overflow: hidden;border-radius: 4px;}
+.create-resume-template-list .current img{border-color: #000!important;}
+.create-resume-template-list .current .bi-check2-square{opacity: 1;}
 
 /* 我的收藏 */
 .user-collect{padding-left: 220px;position: relative;width: 100%;z-index: 11;}
