@@ -709,7 +709,7 @@ $(document).ready(() => {
     $(document).on('click', '.resume-name-current-button', function(e) {
       $(this).addClass('resume-name-current')
       $(document).one('click', function() {
-        if($('.resume-name-current').find('.resume-name-main').text() == '') {
+        if($('.resume-name-main').text() == '') {
           message('请输入简历名称','danger');
         }else{
           $('.resume-name-current-button').removeClass('resume-name-current')

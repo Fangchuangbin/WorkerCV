@@ -15,8 +15,8 @@ $(document).ready(() => {
 
   //用户中心->我的简历->简历数量
   var resumeListCount = 1;
-  $('.resume-list').find('a').each(function(i) {
-    resumeListCount += Number(i);
+  $('.resume-list').find('.text-dark').each(function(i) {
+    resumeListCount = Number(i + 1);
   })
   $('.resume-list-count').text(resumeListCount);
 
