@@ -85,6 +85,14 @@ class ResumeController extends Controller {
     ctx.body = createResume;
   }
 
+  //接口->删除简历
+  async deleteResume() {
+    const { ctx } = this;
+    const resumeData = ctx.request.body;
+    const deleteResume = await ctx.service.resume.deleteResume(resumeData);
+    ctx.body = deleteResume;
+  }
+
 }
 
 module.exports = ResumeController;

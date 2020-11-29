@@ -23,4 +23,5 @@ module.exports = app => {
   router.post('/changeCurrentResumeName', token, controller.resume.changeCurrentResumeName);//修改简历名称
   router.post('/changeCurrentResumeConfig', token, controller.resume.changeCurrentResumeConfig);//修改简历配置
   router.post('/createResume', token, controller.resume.createResume);//创建简历
+  router.post('/deleteResume', token, controller.resume.deleteResume);//删除简历
 };

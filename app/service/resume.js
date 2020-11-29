@@ -217,6 +217,17 @@ class ResumeService extends Service {
        return {result: fail }
      }
   }
+
+  //删除简历
+  async deleteResume(resumeData) {
+    const { ctx, app } = this;
+    const deleteResume = await app.mysql.delete('workercv_resume', { resume_key: resumeData.resumeKey })
+    if(deleteResume.affectedRows === 1) {
+      return { result: success }
+    }else{
+      return { result: fial }
+    }
+  }
 }
 
 module.exports = ResumeService;

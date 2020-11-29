@@ -15,7 +15,7 @@ $(document).ready(() => {
 
   //用户中心->我的简历->简历数量
   var resumeListCount = 1;
-  $('.resume-list').find('.text-dark').each(function(i) {
+  $('.resume-list').find('.resume-item').each(function(i) {
     resumeListCount = Number(i + 1);
   })
   $('.resume-list-count').text(resumeListCount);
@@ -42,7 +42,7 @@ $(document).ready(() => {
         if(resumeName && realname && phone && email && introduce && userId && templateKey) {
           const newResumeData = {"resumeName": resumeName, "realname": realname, "phone": phone, "email": email, "introduce": introduce }
           $.ajax({
-            url: '/createResume',
+            url: baseURL + '/createResume',
             type: 'post',
             dataType: 'json',
             timeout: 5000,
@@ -67,4 +67,34 @@ $(document).ready(() => {
     }
   })
 
+  //简历跳转
+  $(document).on('click', '.resume-item', function() {
+    document.location.href = '/resume/' + $(this).parents('a').attr('data-resume-key');
+  })
+
+  //删除简历
+  $(document).on('click', '.delete-button', function() {
+    var deleteConfirm = confirm('确定删除该简历？');
+    if(deleteConfirm) {
+      const resumeKey = $(this).parents('a').attr('data-resume-key');
+      $.ajax({
+        url: baseURL + '/deleteResume',
+        type: 'post',
+        dataType: 'json',
+        timeout: 5000,
+        headers: { 'x-csrf-token': $.cookie('csrfToken') },
+        data: { resumeKey },
+        success: (response) => {
+          console.log(response)
+          message('删除成功','success');
+          setTimeout(() => {
+            document.location.reload();
+          }, 500);
+        },
+        error: (error) => {
+          message('删除失败，请重试','danger');
+        }
+      })
+    }
+  })
 })
