@@ -350,7 +350,7 @@ $(document).ready(() => {
             $('.resume-left .intention .salary').val(n.data.salary);//地址
             $('.resume-left .intention .arrive-time').val(n.data.arrive_time);//电子邮箱
             //右
-            $('.resume-right .intention h6').text(n.name)
+            $('.resume-right .intention h6').text(n.name);//模块名称
             $('.resume-right .intention .position').text(n.data.position);//姓名
             $('.resume-right .intention .city').text(n.data.city);//手机号
             $('.resume-right .intention .salary').text(n.data.salary);//电子邮箱
@@ -391,6 +391,7 @@ $(document).ready(() => {
               educationBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
               educationBox += '</div>';
             });
+            $('.resume-right .education h6').text(n.name);//模块名称
             $('.resume-right .education-box').html(educationBox);
           }
           break;
@@ -426,6 +427,7 @@ $(document).ready(() => {
                 workBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
                 workBox += '</div>';
               });
+              $('.resume-right .work h6').text(n.name);//模块名称
               $('.resume-right .work-box').html(workBox);
           }
           break;
@@ -459,6 +461,7 @@ $(document).ready(() => {
               associationBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
               associationBox += '</div>';
             });
+            $('.resume-right .association h6').text(n.name);//模块名称
             $('.resume-right .association-box').html(associationBox);
           }
           break;
@@ -492,6 +495,7 @@ $(document).ready(() => {
               projectBox += '<div class="content" style="font-size: 13px;margin-top: 3px;">' + n.content + '</div>';
               projectBox += '</div>';
             });
+            $('.resume-right .project h6').text(n.name);//模块名称
             $('.resume-right .project-box').html(projectBox);
           }
           break;
@@ -503,6 +507,7 @@ $(document).ready(() => {
             $('.resume-left .certificate .skill').text(n.data.skill);//技能
             $('.resume-left .certificate .prove').text(n.data.prove);//证书
             //右
+            $('.resume-right .certificate h6').text(n.name);//模块名称
             $('.resume-right .certificate .skill').text(n.data.skill);//技能
             $('.resume-right .certificate .prove').text(n.data.prove);//证书
           }
@@ -514,6 +519,7 @@ $(document).ready(() => {
             //左
             $('.resume-left .appraise .introduce').text(n.data.introduce);//自我评价
             //右
+            $('.resume-right .appraise h6').text(n.name);//模块名称
             $('.resume-right .appraise .introduce').text(n.data.introduce);//自我评价
           }
           break;

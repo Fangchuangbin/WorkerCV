@@ -91,7 +91,7 @@ a.text-lead:hover{color: #657ea4;}
 .user .resume-list .card-title{height: 25px;line-height: 25px;display: block;overflow: hidden;margin-bottom: 3px;text-align: center;}
 .user .resume-list a:hover{padding-top: 10px!important;}
 .user .resume-list a:hover .resume-more{opacity: 1;}
-.user .resume-list a:focus .resume-more{opacity: 1!important;}
+.user .resume-list .show .resume-more{opacity: 1!important;}
 .user .resume-list .dropdown-menu{left: -30px!important;top: 10px!important;min-width: 50px;}
 
 .user .resume-list .dropdown-menu p{line-height: 29px;padding: 0px 10px;}
@@ -107,7 +107,7 @@ a.text-lead:hover{color: #657ea4;}
 
 
 /* 编辑简历 */
-
+.save-config-button{height: 20px;padding: 0px 8px;margin-top: -5px;}
 .edit-header{height: 51px;border-bottom: 1px solid #e5ecf5;}
 .edit-header .back-button{line-height: 35px;}
 .edit-header .back-button:hover{background: #e5ecf5;}
@@ -134,7 +134,6 @@ a.text-lead:hover{color: #657ea4;}
 .edit-header .resume-line select{height: 21px;padding: 0 5px;cursor: pointer;}
 .edit-header .resume-padding{height: 21px;margin: 2px 0;}
 .edit-header .resume-padding select{height: 21px;padding: 0 3px;cursor: pointer;}
-.edit .save-config-button{height: 20px;padding: 0px 8px;margin-top: -5px;}
 .edit .resume-left{border-radius: 0px 4px 4px 4px!important;position: absolute;height: 90%;overflow-y: scroll;width: 290px;}
 .edit .resume-left .card{position: static;}
 .edit .resume-left .card-header{cursor: pointer;}
