@@ -1209,7 +1209,6 @@ $(document).ready(() => {
     alert("敬请期待...")
   })
 
-
   //提示框
   $('.resume-more').find('svg').tooltip();
   $('.download-resume').tooltip();

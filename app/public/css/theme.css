@@ -2,24 +2,60 @@ ul,ol,li,p{margin: 0;padding: 0;list-style-type: none;}
 a{transition: 0.3s;}
 a:hover{text-decoration: none;}
 @media screen and (max-width: 768px) {
-  .wrapper{width: 100%!important;}
+  .wrapper{width: 100%!important;padding: 0 5%!important;}
   .wrapper-plus{width: 100%!important;}
-  .w-50{width: 100%!important;margin: 0!important;padding: 0px 5%!important;}
-
+  .w-50{width: 100%!important;margin: 0!important;}
+  .default-header-nav{display: none;}
+  .default-header{padding-left: 5%!important;padding-right: 5%!important;}
+  .index-1 .w-25{width: 100%!important;}
+  .index-1 .w-50{width: 100%!important;padding: 0!important;}
+  .index-1{padding: 0 5%!important;background: none!important;}
+  .index-1 .w-75{width: 100%!important;}
+  .index-1 h1{font-size: 35px!important;margin: 0!important;}
+  .index-1 h6{font-size: 14px!important;line-height: 26px!important;}
+  .index-1 input{margin-bottom: 10px!important;}
+  .index-2{padding: 0 5%!important;margin-top: 100px!important;height: 190px!important;padding-top: 30px!important;}
+  .index-3{margin-top: 50px!important;}
+  .index-3 ul li{width: 50%!important;height: auto!important;}
+  .index-3 ul li a{height: auto!important;}
+  .index-3 ul li a img{height: 220px!important;}
+  .index-3 ul li .more-template{height: 220px!important;padding-top: 45%!important;}
+  .index-4 .pl-3{padding: 0!important;}
+  .index-4 .float-right{margin-top: 10px!important;padding-top: 0px!important;}
+  .index-5 .pl-3{padding: 0!important;}
+  .index-5 .float-left{padding-top: 0px!important;}
+  .index-5 .float-right{margin-top: 10px!important;}
+  .index-6 .pl-3{padding: 0!important;}
+  .index-6 .float-right{margin-top: 10px!important;padding-top: 0px!important;}
+  .index-7 .pl-3{padding: 0!important;}
+  .index-7 .float-left{padding-top: 0px!important;}
+  .index-7 .float-right{margin-top: 10px!important;}
+  .index-8 .float-right{padding-left: 0!important;}
+  .index-8 a .float-right{width: 100%!important;padding-left: 6%!important;}
+  .index-8 a .float-left{display: none;}
+  .index-8 div.float-right p{margin-bottom: 10px!important;margin-top: 20px!important;}
+  .index-8 a .float-right p{margin: 0 0 5px 0!important;}
+  .index-8 .special-list li{width: 50%!important;margin-bottom: 10px!important;}
+  .index-9{margin-top: 20px!important;padding-top: 20px!important;}
+  .index-9 h1{font-size: 34px!important;}
+  .index-10{padding: 15px 5%!important;}
+  .index-10 a{margin-top: 10px!important;}
+  .footer .col-4{max-width: 100%!important;}
+  .footer .col-2{display: none;}
 }
 .wrapper{width: 1120px;margin: auto;}
 .wrapper-plus{width: 1150px;margin: auto;}
 .overflow-hidden{overflow: hidden!important;}
 
-.font-size-12{font-size: 12px}
-.font-size-13{font-size: 13px}
-.font-size-14{font-size: 14px}
-.font-size-15{font-size: 15px}
-.font-size-16{font-size: 16px}
-.font-size-17{font-size: 17px}
-.font-size-18{font-size: 18px}
-.font-size-19{font-size: 19px}
-.font-size-20{font-size: 20px}
+.font-size-12{font-size: 12px;}
+.font-size-13{font-size: 13px;}
+.font-size-14{font-size: 14px;}
+.font-size-15{font-size: 15px;}
+.font-size-16{font-size: 16px;}
+.font-size-17{font-size: 17px;}
+.font-size-18{font-size: 18px;}
+.font-size-19{font-size: 19px;}
+.font-size-20{font-size: 20px;}
 
 .text-lead{color: #8599b7;}
 a.text-lead:hover{color: #657ea4;}
@@ -38,7 +74,7 @@ a.text-lead:hover{color: #657ea4;}
 .message{position: fixed;top: 10px;z-index: 1111;left: 50%;transform: translateX(-50%);transition: 0.5s;}
 
 /* 首页->公共 */
-.default-header-logo a{display: block;overflow: hidden;background: url('/images/logo.png') no-repeat;height: 28px;width: 135px;}
+.default-header-logo a{display: block;overflow: hidden;background: url('/images/logo.png') no-repeat;height: 28px;width: 135px;background-size: 100%;}
 .default-header-nav {font-size: 15px;line-height: 28px;position: absolute;left: 50%;transform: translateX(-50%);}
 .default-header-nav .dropdown-menu{min-width: 40px;left: -10px!important;}
 .default-header-nav-item {float: left;margin: 0px 20px;}
@@ -76,11 +112,12 @@ a.text-lead:hover{color: #657ea4;}
 .index-8 .special-list li a .img img{min-height: 120px;}
 .index-8 .special-list li a .title{display: block;max-height: 42px;line-height: 21px;overflow: hidden;}
 .index-9 h1{font-size: 45px;}
-.index-9 .btn-box{width: 285px;margin: auto}
+.index-9 .btn-box{width: 285px;margin: auto;}
+.footer img{width: 135px;height: 28px;}
 
 /* 我的简历 */
 .user-header{border-bottom: 1px solid #e5ecf5;}
-.user-header-logo{background: url('/images/logo.png') no-repeat 0 6px;background-size: 100%;width: 170px;height: 35px;}
+.user-header-logo{background: url('/images/logo.png') no-repeat 0 6px;background-size: 100%;width: 115px;}
 .user-header-logo a{display: block;overflow: hidden;height: 35px;width: 125px;}
 .user-nav{display: flex;position: absolute;left: 50%;transform: translateX(-50%);z-index: 13;}
 .user-nav a{color: #343a40;margin: 0px 18px;}
