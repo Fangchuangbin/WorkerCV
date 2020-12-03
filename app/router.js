@@ -12,7 +12,7 @@ module.exports = app => {
   router.get('/resume', token, controller.resume.index);//我的简历
   router.get('/resume/:resumeKey', token, controller.resume.edit);//编辑简历
   router.get('/collect', token, controller.collect.index);//我的收藏
-
+  router.get('/recommend', token, controller.recommend.index);//推荐模板
   //接口
   router.post('/login', controller.common.login);//登录
   router.post('/loginStatus', controller.common.loginStatus);//登录状态
