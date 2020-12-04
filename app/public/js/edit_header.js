@@ -1205,8 +1205,9 @@ $(document).ready(() => {
     })
   })
 
+  //打印简历
   $('.print-resume').click(() => {
-    alert("敬请期待...")
+    message("敬请期待...", "danger")
   })
 
   //提示框

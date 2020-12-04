@@ -46,4 +46,11 @@ $(document).ready(() => {
       })
     }
   })
+
+  //高亮
+  $(document).find('.default-header-nav a').each(function() {
+    if($(this).attr('href') == window.location.pathname){
+      $(this).addClass('font-weight-bold');
+    }
+  })
 })
