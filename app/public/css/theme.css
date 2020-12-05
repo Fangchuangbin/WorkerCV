@@ -219,3 +219,11 @@ a.text-lead:hover{color: #657ea4;}
 .template .tab-content .tag li{float: left;overflow: hidden;line-height: 33px;margin-right: 15px;margin-top: 6px;}
 .template .tab-content .tag li a{color: #414549;padding: 6px 12px;transition: 0.3s;}
 .template .tab-content .tag li a:hover{color: #007bff;}
+
+.template-list-main{width: 265px;overflow: hidden;height: 435px;cursor: pointer;float: left;margin-left: 20px;margin-bottom: 18px;}
+.template-list-main:nth-child(1){margin-left: 0;}
+.template-list-main:nth-child(4n+1){margin-left: 0;}
+.template-list-main .img{width: 100%;overflow: hidden;display: block;height: 330px;}
+.template-list-main img{width: 100%;}
+.template-list-main a{display: block;overflow: hidden;margin-top: 7px;transition: 0.5s;}
+.template-list-main:hover a{margin-top: 0;}

@@ -1,4 +1,4 @@
-const baseURL = 'http://192.168.0.5:7001';//请求接口
+const baseURL = 'http://127.0.0.1:7001';//请求接口
 
 //退出登录
 function logOut() {
